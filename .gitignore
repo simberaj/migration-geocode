@@ -1,0 +1,9 @@
+*
+
+!.gitignore
+!conf.json
+!dbinit.sql
+!dbpostfill.sql
+!dedup.py
+!geocode.py
+!load_geonames.py

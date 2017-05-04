@@ -1,0 +1,3821 @@
+{
+  "countries": {
+    "": {
+      "centroid": null,
+      "names:cs": [
+        "neuvedený stát",
+        "osoba bez státní přísl."
+      ],
+      "code": "",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        ""
+      ]
+    },
+    "KG": {
+      "centroid": [
+        41.0,
+        75.0
+      ],
+      "names:cs": [
+        "Kyrgyzstán"
+      ],
+      "code": "KG",
+      "neighbours": [
+        "TJ",
+        "UZ",
+        "KZ",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Kyrgyzstan"
+      ]
+    },
+    "IC": {
+      "centroid": [
+        65.0,
+        -18.0
+      ],
+      "names:cs": [
+        "Island"
+      ],
+      "code": "IC",
+      "neighbours": [
+        "DK",
+        "NO",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Iceland"
+      ]
+    },
+    "JP": {
+      "centroid": [
+        36.0,
+        138.0
+      ],
+      "names:cs": [
+        "Japonsko"
+      ],
+      "code": "JP",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Japan"
+      ]
+    },
+    "TN": {
+      "centroid": [
+        34.0,
+        9.0
+      ],
+      "names:cs": [
+        "Tunisko"
+      ],
+      "code": "TN",
+      "neighbours": [
+        "DZ",
+        "LY",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Tunisia"
+      ]
+    },
+    "TH": {
+      "centroid": [
+        15.0,
+        100.0
+      ],
+      "names:cs": [
+        "Thajsko"
+      ],
+      "code": "TH",
+      "neighbours": [
+        "LA",
+        "MM",
+        "KH",
+        "MY",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Thailand"
+      ]
+    },
+    "BR": {
+      "centroid": [
+        -10.0,
+        -55.0
+      ],
+      "names:cs": [
+        "Brazílie"
+      ],
+      "code": "BR",
+      "neighbours": [
+        "SR",
+        "PE",
+        "BO",
+        "UY",
+        "GY",
+        "PY",
+        "GF",
+        "VE",
+        "CO",
+        "AR",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Brazil"
+      ]
+    },
+    "ML": {
+      "centroid": [
+        18.0,
+        -2.0
+      ],
+      "names:cs": [
+        "Mali"
+      ],
+      "code": "ML",
+      "neighbours": [
+        "MR",
+        "DZ",
+        "NE",
+        "BF",
+        "SN",
+        "GN",
+        "CI",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Mali"
+      ]
+    },
+    "CI": {
+      "centroid": [
+        8.0,
+        -5.5
+      ],
+      "names:cs": [
+        "Pobřeží slonoviny"
+      ],
+      "code": "CI",
+      "neighbours": [
+        "ML",
+        "BF",
+        "LR",
+        "GH",
+        "GN",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Ivory Coast",
+        "Côte d’Ivoire"
+      ]
+    },
+    "GU": {
+      "centroid": [
+        13.47861,
+        144.81834
+      ],
+      "names:cs": [
+        "Guam"
+      ],
+      "code": "GU",
+      "neighbours": [
+        "US",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Guam"
+      ]
+    },
+    "XK": {
+      "centroid": [
+        42.58333,
+        20.91667
+      ],
+      "names:cs": [
+        "Kosovo"
+      ],
+      "code": "XK",
+      "neighbours": [
+        "AL",
+        "RS",
+        "MK",
+        "ME",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Kosovo"
+      ]
+    },
+    "BD": {
+      "centroid": [
+        24.0,
+        90.0
+      ],
+      "names:cs": [
+        "Bangladéš"
+      ],
+      "code": "BD",
+      "neighbours": [
+        "MM",
+        "IN",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Bangladesh"
+      ]
+    },
+    "SY": {
+      "centroid": [
+        35.0,
+        38.0
+      ],
+      "names:cs": [
+        "Syrská arabská republik",
+        "Sýrie"
+      ],
+      "code": "SY",
+      "neighbours": [
+        "IQ",
+        "JO",
+        "IL",
+        "TR",
+        "LB",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Syria"
+      ]
+    },
+    "PA": {
+      "centroid": [
+        9.0,
+        -80.0
+      ],
+      "names:cs": [
+        "Panama"
+      ],
+      "code": "PA",
+      "neighbours": [
+        "CR",
+        "CO",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Panama"
+      ]
+    },
+    "VN": {
+      "centroid": [
+        16.166667,
+        107.833333
+      ],
+      "names:cs": [
+        "Vietnam"
+      ],
+      "code": "VN",
+      "neighbours": [
+        "LA",
+        "KH",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Vietnam"
+      ]
+    },
+    "LB": {
+      "centroid": [
+        33.833333,
+        35.833333
+      ],
+      "names:cs": [
+        "Libanon"
+      ],
+      "code": "LB",
+      "neighbours": [
+        "SY",
+        "IL",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Lebanon"
+      ]
+    },
+    "FI": {
+      "centroid": [
+        64.0,
+        26.0
+      ],
+      "names:cs": [
+        "Finsko"
+      ],
+      "code": "FI",
+      "neighbours": [
+        "NO",
+        "SE",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Finland"
+      ]
+    },
+    "JM": {
+      "centroid": [
+        18.25,
+        -77.5
+      ],
+      "names:cs": [
+        "Jamajka"
+      ],
+      "code": "JM",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Jamaica"
+      ]
+    },
+    "MY": {
+      "centroid": [
+        2.5,
+        112.5
+      ],
+      "names:cs": [
+        "Malajsie"
+      ],
+      "code": "MY",
+      "neighbours": [
+        "BN",
+        "TH",
+        "ID",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Malaysia"
+      ]
+    },
+    "BS": {
+      "centroid": [
+        24.0,
+        -76.0
+      ],
+      "names:cs": [
+        "Bahamy"
+      ],
+      "code": "BS",
+      "neighbours": [
+        "US",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Bahamas"
+      ]
+    },
+    "RU": {
+      "centroid": [
+        60.0,
+        100.0
+      ],
+      "names:cs": [
+        "Ruská federace",
+        "Rusko",
+        "Spol. nezávisl.st.",
+        "Společ.nezávisl.států"
+      ],
+      "code": "RU",
+      "neighbours": [
+        "BY",
+        "UA",
+        "KZ",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Russia",
+        "Rossiya",
+        "Rossia"
+      ]
+    },
+    "NP": {
+      "centroid": [
+        28.0,
+        84.0
+      ],
+      "names:cs": [
+        "Nepál"
+      ],
+      "code": "NP",
+      "neighbours": [
+        "CN",
+        "IN",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Nepal"
+      ]
+    },
+    "ET": {
+      "centroid": [
+        8.0,
+        38.0
+      ],
+      "names:cs": [
+        "Etiopie"
+      ],
+      "code": "ET",
+      "neighbours": [
+        "ER",
+        "KE",
+        "SD",
+        "SS",
+        "SO",
+        "DJ",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Ethiopia"
+      ]
+    },
+    "AE": {
+      "centroid": [
+        24.0,
+        54.0
+      ],
+      "names:cs": [
+        "Spojené arabské emiráty"
+      ],
+      "code": "AE",
+      "neighbours": [
+        "SA",
+        "OM",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "United Arab Emirates"
+      ]
+    },
+    "MA": {
+      "centroid": [
+        32.0,
+        -5.0
+      ],
+      "names:cs": [
+        "Maroko"
+      ],
+      "code": "MA",
+      "neighbours": [
+        "DZ",
+        "EH",
+        "ES",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Morocco"
+      ]
+    },
+    "IR": {
+      "centroid": [
+        32.0,
+        53.0
+      ],
+      "names:cs": [
+        "Írán(islámská republika",
+        "Írán"
+      ],
+      "code": "IR",
+      "neighbours": [
+        "TM",
+        "AF",
+        "IQ",
+        "AM",
+        "PK",
+        "AZ",
+        "TR",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Iran"
+      ]
+    },
+    "MX": {
+      "centroid": [
+        23.0,
+        -102.0
+      ],
+      "names:cs": [
+        "Mexiko"
+      ],
+      "code": "MX",
+      "neighbours": [
+        "GT",
+        "BZ",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Mexico"
+      ]
+    },
+    "RS": {
+      "centroid": [
+        44.0,
+        21.0
+      ],
+      "names:cs": [
+        "Svaz.rep.Jugoslávie",
+        "Srbsko"
+      ],
+      "code": "RS",
+      "neighbours": [
+        "AL",
+        "HU",
+        "MK",
+        "RO",
+        "HR",
+        "BA",
+        "BG",
+        "ME",
+        "XK",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Serbia"
+      ]
+    },
+    "PK": {
+      "centroid": [
+        30.0,
+        70.0
+      ],
+      "names:cs": [
+        "Pákistán"
+      ],
+      "code": "PK",
+      "neighbours": [
+        "AF",
+        "IR",
+        "IN",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Pakistan"
+      ]
+    },
+    "MD": {
+      "centroid": [
+        47.0,
+        29.0
+      ],
+      "names:cs": [
+        "Moldavsko",
+        "Moldavská republika"
+      ],
+      "code": "MD",
+      "neighbours": [
+        "RO",
+        "UA",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Moldova"
+      ]
+    },
+    "SV": {
+      "centroid": [
+        13.833333,
+        -88.916667
+      ],
+      "names:cs": [
+        "Salvador"
+      ],
+      "code": "SV",
+      "neighbours": [
+        "GT",
+        "HN",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Salvador"
+      ]
+    },
+    "IL": {
+      "centroid": [
+        31.5,
+        34.75
+      ],
+      "names:cs": [
+        "Izrael"
+      ],
+      "code": "IL",
+      "neighbours": [
+        "SY",
+        "JO",
+        "LB",
+        "EG",
+        "PS",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Israel"
+      ]
+    },
+    "KR": {
+      "centroid": [
+        37.0,
+        127.5
+      ],
+      "names:cs": [
+        "Korea",
+        "Korejská republika"
+      ],
+      "code": "KR",
+      "neighbours": [
+        "KP",
+        "CZ"
+      ],
+      "ruleset": "chinese",
+      "names:en": [
+        "South Korea"
+      ]
+    },
+    "MK": {
+      "centroid": [
+        41.833333,
+        22.0
+      ],
+      "names:cs": [
+        "Makedonie",
+        "Makedonie,býv.jug.rep."
+      ],
+      "code": "MK",
+      "neighbours": [
+        "AL",
+        "GR",
+        "BG",
+        "RS",
+        "XK",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Macedonia"
+      ]
+    },
+    "GB": {
+      "centroid": [
+        54.0,
+        -4.0
+      ],
+      "names:cs": [
+        "Spojené království",
+        "Britské osoby",
+        "Velká Británie"
+      ],
+      "code": "GB",
+      "neighbours": [
+        "IE",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "United Kingdom"
+      ]
+    },
+    "GR": {
+      "centroid": [
+        39.0,
+        22.0
+      ],
+      "names:cs": [
+        "Řecko"
+      ],
+      "code": "GR",
+      "neighbours": [
+        "AL",
+        "MK",
+        "TR",
+        "BG",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Greece"
+      ]
+    },
+    "TT": {
+      "centroid": [
+        11.0,
+        -61.0
+      ],
+      "names:cs": [
+        "Trinidad a Tobago"
+      ],
+      "code": "TT",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Trinidad and Tobago"
+      ]
+    },
+    "IT": {
+      "centroid": [
+        42.833333,
+        12.833333
+      ],
+      "names:cs": [
+        "Itálie"
+      ],
+      "code": "IT",
+      "neighbours": [
+        "CH",
+        "VA",
+        "SI",
+        "SM",
+        "FR",
+        "AT",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Italy"
+      ]
+    },
+    "IN": {
+      "centroid": [
+        20.0,
+        77.0
+      ],
+      "names:cs": [
+        "Indie"
+      ],
+      "code": "IN",
+      "neighbours": [
+        "NP",
+        "MM",
+        "BT",
+        "PK",
+        "BD",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "India"
+      ]
+    },
+    "SK": {
+      "centroid": [
+        48.666667,
+        19.5
+      ],
+      "names:cs": [
+        "Slovensko"
+      ],
+      "code": "SK",
+      "neighbours": [
+        "PL",
+        "HU",
+        "CZ",
+        "UA",
+        "AT",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Slovakia"
+      ]
+    },
+    "CZ,SK": {
+      "centroid": [
+        49.75,
+        15.0
+      ],
+      "names:cs": [
+        "Čes.a Slov.feder.rep."
+      ],
+      "code": "CZ,SK",
+      "neighbours": [
+        "PL",
+        "DE",
+        "SK",
+        "AT",
+        "HU",
+        "UA",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Czech Republic,Slovakia"
+      ]
+    },
+    "VE": {
+      "centroid": [
+        8.0,
+        -66.0
+      ],
+      "names:cs": [
+        "Bolívar. rep. Venezuela",
+        "Venezuela"
+      ],
+      "code": "VE",
+      "neighbours": [
+        "GY",
+        "BR",
+        "CO",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Venezuela"
+      ]
+    },
+    "BI": {
+      "centroid": [
+        -3.5,
+        30.0
+      ],
+      "names:cs": [
+        "Burundi"
+      ],
+      "code": "BI",
+      "neighbours": [
+        "TZ",
+        "CD",
+        "RW",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Burundi"
+      ]
+    },
+    "MV": {
+      "centroid": [
+        3.2,
+        73.0
+      ],
+      "names:cs": [
+        "Maledivy"
+      ],
+      "code": "MV",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Maldives"
+      ]
+    },
+    "EG": {
+      "centroid": [
+        27.0,
+        30.0
+      ],
+      "names:cs": [
+        "Egypt"
+      ],
+      "code": "EG",
+      "neighbours": [
+        "LY",
+        "SD",
+        "IL",
+        "PS",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Egypt"
+      ]
+    },
+    "NO": {
+      "centroid": [
+        62.0,
+        10.0
+      ],
+      "names:cs": [
+        "Norsko"
+      ],
+      "code": "NO",
+      "neighbours": [
+        "FI",
+        "SE",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Norway"
+      ]
+    },
+    "CH": {
+      "centroid": [
+        47.0,
+        8.0
+      ],
+      "names:cs": [
+        "Švýcarsko"
+      ],
+      "code": "CH",
+      "neighbours": [
+        "DE",
+        "IT",
+        "LI",
+        "FR",
+        "AT",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Switzerland"
+      ]
+    },
+    "GY": {
+      "centroid": [
+        5.0,
+        -59.0
+      ],
+      "names:cs": [
+        "Guyana"
+      ],
+      "code": "GY",
+      "neighbours": [
+        "SR",
+        "BR",
+        "VE",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Guyana"
+      ]
+    },
+    "TR": {
+      "centroid": [
+        39.059012,
+        34.911546
+      ],
+      "names:cs": [
+        "Turecko"
+      ],
+      "code": "TR",
+      "neighbours": [
+        "SY",
+        "GE",
+        "IQ",
+        "IR",
+        "GR",
+        "AM",
+        "AZ",
+        "BG",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Turkey"
+      ]
+    },
+    "RO": {
+      "centroid": [
+        46.0,
+        25.0
+      ],
+      "names:cs": [
+        "Rumunsko-archiv",
+        "Rumunsko",
+        "Rumunsko (ROM)"
+      ],
+      "code": "RO",
+      "neighbours": [
+        "MD",
+        "HU",
+        "UA",
+        "BG",
+        "RS",
+        "CZ"
+      ],
+      "ruleset": "romanian",
+      "names:en": [
+        "Romania"
+      ]
+    },
+    "SE": {
+      "centroid": [
+        62.0,
+        15.0
+      ],
+      "names:cs": [
+        "Švédsko"
+      ],
+      "code": "SE",
+      "neighbours": [
+        "NO",
+        "FI",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Sweden"
+      ]
+    },
+    "KH": {
+      "centroid": [
+        13.0,
+        105.0
+      ],
+      "names:cs": [
+        "Kambodža"
+      ],
+      "code": "KH",
+      "neighbours": [
+        "LA",
+        "TH",
+        "VN",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Cambodia"
+      ]
+    },
+    "BE": {
+      "centroid": [
+        50.833333,
+        4.0
+      ],
+      "names:cs": [
+        "Belgie"
+      ],
+      "code": "BE",
+      "neighbours": [
+        "DE",
+        "NL",
+        "LU",
+        "FR",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Belgium"
+      ]
+    },
+    "AZ": {
+      "centroid": [
+        40.5,
+        47.5
+      ],
+      "names:cs": [
+        "Ázerbájdžán"
+      ],
+      "code": "AZ",
+      "neighbours": [
+        "GE",
+        "IR",
+        "AM",
+        "TR",
+        "RU",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Azerbaijan"
+      ]
+    },
+    "LA": {
+      "centroid": [
+        18.0,
+        105.0
+      ],
+      "names:cs": [
+        "Laos",
+        "Laoská lid.dem.repub."
+      ],
+      "code": "LA",
+      "neighbours": [
+        "CN",
+        "MM",
+        "KH",
+        "TH",
+        "VN",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Laos"
+      ]
+    },
+    "SR": {
+      "centroid": [
+        4.0,
+        -56.0
+      ],
+      "names:cs": [
+        "Surinam"
+      ],
+      "code": "SR",
+      "neighbours": [
+        "GY",
+        "BR",
+        "GF",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Suriname"
+      ]
+    },
+    "UZ": {
+      "centroid": [
+        41.707542,
+        63.84911
+      ],
+      "names:cs": [
+        "Uzbekistán"
+      ],
+      "code": "UZ",
+      "neighbours": [
+        "TM",
+        "AF",
+        "KG",
+        "TJ",
+        "KZ",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Uzbekistan"
+      ]
+    },
+    "TW": {
+      "centroid": [
+        24.0,
+        121.0
+      ],
+      "names:cs": [
+        "Tchaj-wan",
+        "Tchaj-wan, čín.provinc"
+      ],
+      "code": "TW",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Taiwan"
+      ]
+    },
+    "NG": {
+      "centroid": [
+        10.0,
+        8.0
+      ],
+      "names:cs": [
+        "Nigérie"
+      ],
+      "code": "NG",
+      "neighbours": [
+        "TD",
+        "NE",
+        "BJ",
+        "CM",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Nigeria"
+      ]
+    },
+    "MG": {
+      "centroid": [
+        -20.0,
+        47.0
+      ],
+      "names:cs": [
+        "Madagaskar"
+      ],
+      "code": "MG",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Madagascar"
+      ]
+    },
+    "SA": {
+      "centroid": [
+        25.0,
+        45.0
+      ],
+      "names:cs": [
+        "Saúdská Arábie"
+      ],
+      "code": "SA",
+      "neighbours": [
+        "QA",
+        "OM",
+        "IQ",
+        "YE",
+        "JO",
+        "AE",
+        "KW",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Saudi Arabia"
+      ]
+    },
+    "LU": {
+      "centroid": [
+        49.75,
+        6.166667
+      ],
+      "names:cs": [
+        "Lucembursko"
+      ],
+      "code": "LU",
+      "neighbours": [
+        "DE",
+        "FR",
+        "BE",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Luxembourg"
+      ]
+    },
+    "KP": {
+      "centroid": [
+        40.0,
+        127.0
+      ],
+      "names:cs": [
+        "Korea, lid. dem. rep.",
+        "Korejská lid.dem.republ"
+      ],
+      "code": "KP",
+      "neighbours": [
+        "CN",
+        "KR",
+        "RU",
+        "CZ"
+      ],
+      "ruleset": "chinese",
+      "names:en": [
+        "North Korea"
+      ]
+    },
+    "AL": {
+      "centroid": [
+        41.0,
+        20.0
+      ],
+      "names:cs": [
+        "Albánie"
+      ],
+      "code": "AL",
+      "neighbours": [
+        "MK",
+        "GR",
+        "ME",
+        "RS",
+        "XK",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Albania"
+      ]
+    },
+    "DO": {
+      "centroid": [
+        19.0,
+        -70.666667
+      ],
+      "names:cs": [
+        "Dominikánská republika"
+      ],
+      "code": "DO",
+      "neighbours": [
+        "HT",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Dominican Republic"
+      ]
+    },
+    "CU": {
+      "centroid": [
+        22.0,
+        -79.5
+      ],
+      "names:cs": [
+        "Kuba"
+      ],
+      "code": "CU",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Cuba"
+      ]
+    },
+    "KW": {
+      "centroid": [
+        29.5,
+        47.75
+      ],
+      "names:cs": [
+        "Kuvajt"
+      ],
+      "code": "KW",
+      "neighbours": [
+        "SA",
+        "IQ",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Kuwait"
+      ]
+    },
+    "SI": {
+      "centroid": [
+        46.25,
+        15.166667
+      ],
+      "names:cs": [
+        "Slovinsko"
+      ],
+      "code": "SI",
+      "neighbours": [
+        "HU",
+        "IT",
+        "HR",
+        "AT",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Slovenia"
+      ]
+    },
+    "VI": {
+      "centroid": [
+        18.3482891,
+        -64.9834807
+      ],
+      "names:cs": [
+        "Americké Panenské ostr."
+      ],
+      "code": "VI",
+      "neighbours": [
+        "US",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "U.S. Virgin Islands"
+      ]
+    },
+    "AO": {
+      "centroid": [
+        -12.5,
+        18.5
+      ],
+      "names:cs": [
+        "Angola"
+      ],
+      "code": "AO",
+      "neighbours": [
+        "CD",
+        "NA",
+        "ZM",
+        "CG",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Angola"
+      ]
+    },
+    "HK": {
+      "centroid": [
+        22.35933,
+        114.14087
+      ],
+      "names:cs": [
+        "Hongkong"
+      ],
+      "code": "HK",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Hong Kong"
+      ]
+    },
+    "GT": {
+      "centroid": [
+        15.5,
+        -90.25
+      ],
+      "names:cs": [
+        "Guatemala"
+      ],
+      "code": "GT",
+      "neighbours": [
+        "MX",
+        "HN",
+        "BZ",
+        "SV",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Guatemala"
+      ]
+    },
+    "UY": {
+      "centroid": [
+        -33.0,
+        -56.0
+      ],
+      "names:cs": [
+        "Uruguay"
+      ],
+      "code": "UY",
+      "neighbours": [
+        "BR",
+        "AR",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Uruguay"
+      ]
+    },
+    "IQ": {
+      "centroid": [
+        33.0,
+        44.0
+      ],
+      "names:cs": [
+        "Irák"
+      ],
+      "code": "IQ",
+      "neighbours": [
+        "SY",
+        "SA",
+        "IR",
+        "JO",
+        "TR",
+        "KW",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Iraq"
+      ]
+    },
+    "CY": {
+      "centroid": [
+        35.0,
+        33.0
+      ],
+      "names:cs": [
+        "Kypr"
+      ],
+      "code": "CY",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Cyprus"
+      ]
+    },
+    "CS,RS,ME": {
+      "centroid": [
+        44.0,
+        21.0
+      ],
+      "names:cs": [
+        "Srbsko a Černá Hora"
+      ],
+      "code": "CS,RS,ME",
+      "neighbours": [
+        "AL",
+        "HU",
+        "MK",
+        "RO",
+        "HR",
+        "BA",
+        "BG",
+        "ME",
+        "XK",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Serbia and Montenegro,Serbia,Montenegro"
+      ]
+    },
+    "LK": {
+      "centroid": [
+        7.0,
+        81.0
+      ],
+      "names:cs": [
+        "Srí Lanka",
+        "Šrí Lanka"
+      ],
+      "code": "LK",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Sri Lanka"
+      ]
+    },
+    "UA": {
+      "centroid": [
+        49.0,
+        32.0
+      ],
+      "names:cs": [
+        "Ukrajina"
+      ],
+      "code": "UA",
+      "neighbours": [
+        "PL",
+        "BY",
+        "RU",
+        "CZ"
+      ],
+      "ruleset": "ukrainian",
+      "names:en": [
+        "Ukraine"
+      ]
+    },
+    "PH": {
+      "centroid": [
+        13.0,
+        122.0
+      ],
+      "names:cs": [
+        "Filipíny"
+      ],
+      "code": "PH",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Philippines"
+      ]
+    },
+    "EC": {
+      "centroid": [
+        -2.0,
+        -77.5
+      ],
+      "names:cs": [
+        "Ekvádor"
+      ],
+      "code": "EC",
+      "neighbours": [
+        "PE",
+        "CO",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Ecuador"
+      ]
+    },
+    "AR": {
+      "centroid": [
+        -34.0,
+        -64.0
+      ],
+      "names:cs": [
+        "Argentina"
+      ],
+      "code": "AR",
+      "neighbours": [
+        "CL",
+        "BO",
+        "UY",
+        "PY",
+        "BR",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Argentina"
+      ]
+    },
+    "CA": {
+      "centroid": [
+        60.0,
+        -96.0
+      ],
+      "names:cs": [
+        "Kanada"
+      ],
+      "code": "CA",
+      "neighbours": [
+        "US",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Canada"
+      ]
+    },
+    "JO": {
+      "centroid": [
+        31.0,
+        36.0
+      ],
+      "names:cs": [
+        "Jordánsko"
+      ],
+      "code": "JO",
+      "neighbours": [
+        "SY",
+        "SA",
+        "IQ",
+        "IL",
+        "PS",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Jordan"
+      ]
+    },
+    "PR": {
+      "centroid": [
+        18.2482882,
+        -66.4998941
+      ],
+      "names:cs": [
+        "Portoriko"
+      ],
+      "code": "PR",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Puerto Rico"
+      ]
+    },
+    "BO": {
+      "centroid": [
+        -17.0,
+        -65.0
+      ],
+      "names:cs": [
+        "Bolívie",
+        "Mnohonárod.stát Bolívie"
+      ],
+      "code": "BO",
+      "neighbours": [
+        "PE",
+        "CL",
+        "PY",
+        "BR",
+        "AR",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Bolivia"
+      ]
+    },
+    "FR": {
+      "centroid": [
+        46.0,
+        2.0
+      ],
+      "names:cs": [
+        "Francie"
+      ],
+      "code": "FR",
+      "neighbours": [
+        "CH",
+        "DE",
+        "BE",
+        "LU",
+        "IT",
+        "AD",
+        "MC",
+        "ES",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "France"
+      ]
+    },
+    "ID": {
+      "centroid": [
+        -5.0,
+        120.0
+      ],
+      "names:cs": [
+        "Indonésie"
+      ],
+      "code": "ID",
+      "neighbours": [
+        "PG",
+        "TL",
+        "MY",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Indonesia"
+      ]
+    },
+    "CO": {
+      "centroid": [
+        4.0,
+        -72.0
+      ],
+      "names:cs": [
+        "Kolumbie"
+      ],
+      "code": "CO",
+      "neighbours": [
+        "EC",
+        "PE",
+        "PA",
+        "BR",
+        "VE",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Colombia"
+      ]
+    },
+    "ME": {
+      "centroid": [
+        42.5,
+        19.3
+      ],
+      "names:cs": [
+        "Černá Hora"
+      ],
+      "code": "ME",
+      "neighbours": [
+        "AL",
+        "HR",
+        "BA",
+        "RS",
+        "XK",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Montenegro"
+      ]
+    },
+    "LY": {
+      "centroid": [
+        25.0,
+        17.0
+      ],
+      "names:cs": [
+        "Libyjská arab.džamáh.",
+        "Libye"
+      ],
+      "code": "LY",
+      "neighbours": [
+        "TD",
+        "NE",
+        "DZ",
+        "SD",
+        "TN",
+        "EG",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Libya"
+      ]
+    },
+    "CZ": {
+      "centroid": [
+        49.75,
+        15.0
+      ],
+      "names:cs": [
+        "Česko",
+        "Česká Republika"
+      ],
+      "code": "CZ",
+      "neighbours": [
+        "PL",
+        "DE",
+        "SK",
+        "AT",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Czech Republic"
+      ]
+    },
+    "DE": {
+      "centroid": [
+        51.5,
+        10.5
+      ],
+      "names:cs": [
+        "Německo"
+      ],
+      "code": "DE",
+      "neighbours": [
+        "CH",
+        "PL",
+        "NL",
+        "DK",
+        "BE",
+        "CZ",
+        "LU",
+        "FR",
+        "AT",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Germany"
+      ]
+    },
+    "HN": {
+      "centroid": [
+        15.0,
+        -86.5
+      ],
+      "names:cs": [
+        "Honduras"
+      ],
+      "code": "HN",
+      "neighbours": [
+        "GT",
+        "NI",
+        "SV",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Honduras"
+      ]
+    },
+    "PE": {
+      "centroid": [
+        -10.0,
+        -76.0
+      ],
+      "names:cs": [
+        "Peru"
+      ],
+      "code": "PE",
+      "neighbours": [
+        "EC",
+        "CL",
+        "BO",
+        "BR",
+        "CO",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Peru"
+      ]
+    },
+    "HU": {
+      "centroid": [
+        47.0,
+        20.0
+      ],
+      "names:cs": [
+        "Maďarsko"
+      ],
+      "code": "HU",
+      "neighbours": [
+        "SK",
+        "SI",
+        "RO",
+        "UA",
+        "HR",
+        "AT",
+        "RS",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Hungary"
+      ]
+    },
+    "PY": {
+      "centroid": [
+        -22.993333,
+        -57.996389
+      ],
+      "names:cs": [
+        "Paraguay"
+      ],
+      "code": "PY",
+      "neighbours": [
+        "BO",
+        "BR",
+        "AR",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Paraguay"
+      ]
+    },
+    "BA": {
+      "centroid": [
+        44.25,
+        17.833333
+      ],
+      "names:cs": [
+        "Bosna a Hercegovina"
+      ],
+      "code": "BA",
+      "neighbours": [
+        "HR",
+        "ME",
+        "RS",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Bosnia and Herzegovina"
+      ]
+    },
+    "NL": {
+      "centroid": [
+        52.5,
+        5.75
+      ],
+      "names:cs": [
+        "Nizozemsko"
+      ],
+      "code": "NL",
+      "neighbours": [
+        "DE",
+        "BE",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Netherlands"
+      ]
+    },
+    "SN": {
+      "centroid": [
+        14.0,
+        -14.0
+      ],
+      "names:cs": [
+        "Senegal"
+      ],
+      "code": "SN",
+      "neighbours": [
+        "GN",
+        "MR",
+        "GW",
+        "GM",
+        "ML",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Senegal"
+      ]
+    },
+    "PS": {
+      "centroid": [
+        31.425074,
+        34.373398
+      ],
+      "names:cs": [
+        "Palestinské území (ok.)",
+        "Palestina"
+      ],
+      "code": "PS",
+      "neighbours": [
+        "JO",
+        "IL",
+        "EG",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Palestine"
+      ]
+    },
+    "DK": {
+      "centroid": [
+        56.0,
+        10.0
+      ],
+      "names:cs": [
+        "Dánsko"
+      ],
+      "code": "DK",
+      "neighbours": [
+        "DE",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Denmark"
+      ]
+    },
+    "ZM": {
+      "centroid": [
+        -15.0,
+        30.0
+      ],
+      "names:cs": [
+        "Zambie"
+      ],
+      "code": "ZM",
+      "neighbours": [
+        "ZW",
+        "TZ",
+        "MZ",
+        "CD",
+        "NA",
+        "MW",
+        "AO",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Zambia"
+      ]
+    },
+    "KI": {
+      "centroid": [
+        -5.0,
+        -170.0
+      ],
+      "names:cs": [
+        "Kiribati"
+      ],
+      "code": "KI",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Kiribati"
+      ]
+    },
+    "CR": {
+      "centroid": [
+        10.0,
+        -84.0
+      ],
+      "names:cs": [
+        "Kostarika"
+      ],
+      "code": "CR",
+      "neighbours": [
+        "PA",
+        "NI",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Costa Rica"
+      ]
+    },
+    "AT": {
+      "centroid": [
+        47.333333,
+        13.333333
+      ],
+      "names:cs": [
+        "Rakousko"
+      ],
+      "code": "AT",
+      "neighbours": [
+        "CH",
+        "DE",
+        "HU",
+        "SK",
+        "CZ",
+        "IT",
+        "SI",
+        "LI",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Austria"
+      ]
+    },
+    "AM": {
+      "centroid": [
+        40.0,
+        45.0
+      ],
+      "names:cs": [
+        "Arménie"
+      ],
+      "code": "AM",
+      "neighbours": [
+        "GE",
+        "IR",
+        "AZ",
+        "TR",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Armenia"
+      ]
+    },
+    "MN": {
+      "centroid": [
+        46.0,
+        105.0
+      ],
+      "names:cs": [
+        "Mongolsko"
+      ],
+      "code": "MN",
+      "neighbours": [
+        "CN",
+        "RU",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Mongolia"
+      ]
+    },
+    "NZ": {
+      "centroid": [
+        -42.0,
+        174.0
+      ],
+      "names:cs": [
+        "Nový Zéland"
+      ],
+      "code": "NZ",
+      "neighbours": [
+        "AU",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "New Zealand"
+      ]
+    },
+    "PG": {
+      "centroid": [
+        -6.0,
+        147.0
+      ],
+      "names:cs": [
+        "Papua Nová Guinea"
+      ],
+      "code": "PG",
+      "neighbours": [
+        "ID",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Papua New Guinea"
+      ]
+    },
+    "AU": {
+      "centroid": [
+        -25.0,
+        135.0
+      ],
+      "names:cs": [
+        "Austrálie"
+      ],
+      "code": "AU",
+      "neighbours": [
+        "NZ",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Australia"
+      ]
+    },
+    "ES": {
+      "centroid": [
+        40.0,
+        -4.0
+      ],
+      "names:cs": [
+        "Španělsko"
+      ],
+      "code": "ES",
+      "neighbours": [
+        "AD",
+        "PT",
+        "GI",
+        "FR",
+        "MA",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Spain"
+      ]
+    },
+    "CL": {
+      "centroid": [
+        -30.0,
+        -71.0
+      ],
+      "names:cs": [
+        "Chile"
+      ],
+      "code": "CL",
+      "neighbours": [
+        "PE",
+        "BO",
+        "AR",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Chile"
+      ]
+    },
+    "ZA": {
+      "centroid": [
+        -30.0,
+        26.0
+      ],
+      "names:cs": [
+        "Jihoafrická republika",
+        "Jižní Afrika"
+      ],
+      "code": "ZA",
+      "neighbours": [
+        "ZW",
+        "SZ",
+        "MZ",
+        "BW",
+        "NA",
+        "LS",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "South Africa"
+      ]
+    },
+    "SG": {
+      "centroid": [
+        1.366667,
+        103.8
+      ],
+      "names:cs": [
+        "Singapur"
+      ],
+      "code": "SG",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Singapore"
+      ]
+    },
+    "BG": {
+      "centroid": [
+        43.0,
+        25.0
+      ],
+      "names:cs": [
+        "Bulharsko"
+      ],
+      "code": "BG",
+      "neighbours": [
+        "MK",
+        "GR",
+        "RO",
+        "TR",
+        "RS",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Bulgaria"
+      ]
+    },
+    "HR": {
+      "centroid": [
+        45.166667,
+        15.5
+      ],
+      "names:cs": [
+        "Chorvatsko"
+      ],
+      "code": "HR",
+      "neighbours": [
+        "HU",
+        "SI",
+        "BA",
+        "ME",
+        "RS",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Croatia"
+      ]
+    },
+    "GH": {
+      "centroid": [
+        8.0,
+        -2.0
+      ],
+      "names:cs": [
+        "Ghana"
+      ],
+      "code": "GH",
+      "neighbours": [
+        "CI",
+        "TG",
+        "BF",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Ghana"
+      ]
+    },
+    "IE": {
+      "centroid": [
+        53.0,
+        -8.0
+      ],
+      "names:cs": [
+        "Irsko"
+      ],
+      "code": "IE",
+      "neighbours": [
+        "GB",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Ireland"
+      ]
+    },
+    "PT": {
+      "centroid": [
+        39.5,
+        -8.0
+      ],
+      "names:cs": [
+        "Portugalsko"
+      ],
+      "code": "PT",
+      "neighbours": [
+        "ES",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Portugal"
+      ]
+    },
+    "KE": {
+      "centroid": [
+        1.0,
+        38.0
+      ],
+      "names:cs": [
+        "Keňa"
+      ],
+      "code": "KE",
+      "neighbours": [
+        "ET",
+        "TZ",
+        "SS",
+        "SO",
+        "UG",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Kenya"
+      ]
+    },
+    "PL": {
+      "centroid": [
+        52.0,
+        20.0
+      ],
+      "names:cs": [
+        "Polsko"
+      ],
+      "code": "PL",
+      "neighbours": [
+        "DE",
+        "LT",
+        "SK",
+        "CZ",
+        "BY",
+        "UA",
+        "CZ"
+      ],
+      "ruleset": "polish",
+      "names:en": [
+        "Poland"
+      ]
+    },
+    "TJ": {
+      "centroid": [
+        39.0,
+        71.0
+      ],
+      "names:cs": [
+        "Tádžikistán"
+      ],
+      "code": "TJ",
+      "neighbours": [
+        "AF",
+        "KG",
+        "UZ",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Tajikistan"
+      ]
+    },
+    "US": {
+      "centroid": [
+        39.828175,
+        -98.5795
+      ],
+      "names:cs": [
+        "Spojené státy",
+        "ostrovy USA v Tich.oc."
+      ],
+      "code": "US",
+      "neighbours": [
+        "CA",
+        "MX",
+        "CU",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "United States"
+      ]
+    },
+    "TM": {
+      "centroid": [
+        40.0,
+        60.0
+      ],
+      "names:cs": [
+        "Turkmenistán"
+      ],
+      "code": "TM",
+      "neighbours": [
+        "AF",
+        "IR",
+        "UZ",
+        "KZ",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Turkmenistan"
+      ]
+    },
+    "MM": {
+      "centroid": [
+        22.0,
+        98.0
+      ],
+      "names:cs": [
+        "Myanmar"
+      ],
+      "code": "MM",
+      "neighbours": [
+        "LA",
+        "TH",
+        "BD",
+        "IN",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Myanmar"
+      ]
+    },
+    "DZ": {
+      "centroid": [
+        28.0,
+        3.0
+      ],
+      "names:cs": [
+        "Alžírsko"
+      ],
+      "code": "DZ",
+      "neighbours": [
+        "NE",
+        "EH",
+        "LY",
+        "MR",
+        "TN",
+        "MA",
+        "ML",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Algeria"
+      ]
+    },
+    "AF": {
+      "centroid": [
+        33.0,
+        66.0
+      ],
+      "names:cs": [
+        "Afghánistán"
+      ],
+      "code": "AF",
+      "neighbours": [
+        "RU",
+        "TM",
+        "IR",
+        "TJ",
+        "PK",
+        "UZ",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Afghanistan"
+      ]
+    },
+    "GE": {
+      "centroid": [
+        41.999981,
+        43.499905
+      ],
+      "names:cs": [
+        "Gruzie"
+      ],
+      "code": "GE",
+      "neighbours": [
+        "AM",
+        "AZ",
+        "TR",
+        "RU",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Georgia"
+      ]
+    },
+    "EE": {
+      "centroid": [
+        59.0,
+        26.0
+      ],
+      "names:cs": [
+        "Estonsko"
+      ],
+      "code": "EE",
+      "neighbours": [
+        "LV",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Estonia"
+      ]
+    },
+    "SD": {
+      "centroid": [
+        16.0,
+        30.0
+      ],
+      "names:cs": [
+        "Súdán"
+      ],
+      "code": "SD",
+      "neighbours": [
+        "SS",
+        "TD",
+        "EG",
+        "ET",
+        "ER",
+        "LY",
+        "CF",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Sudan"
+      ]
+    },
+    "KZ": {
+      "centroid": [
+        48.0,
+        68.0
+      ],
+      "names:cs": [
+        "Kazachstán"
+      ],
+      "code": "KZ",
+      "neighbours": [
+        "TM",
+        "KG",
+        "UZ",
+        "RU",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Kazakhstan"
+      ]
+    },
+    "YE": {
+      "centroid": [
+        15.5,
+        47.5
+      ],
+      "names:cs": [
+        "Jemen"
+      ],
+      "code": "YE",
+      "neighbours": [
+        "SA",
+        "OM",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Yemen"
+      ]
+    },
+    "LT": {
+      "centroid": [
+        56.0,
+        24.0
+      ],
+      "names:cs": [
+        "Litva"
+      ],
+      "code": "LT",
+      "neighbours": [
+        "PL",
+        "BY",
+        "RU",
+        "LV",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Lithuania"
+      ]
+    },
+    "BY": {
+      "centroid": [
+        53.0,
+        28.0
+      ],
+      "names:cs": [
+        "Bělorusko"
+      ],
+      "code": "BY",
+      "neighbours": [
+        "PL",
+        "LT",
+        "UA",
+        "RU",
+        "LV",
+        "CZ"
+      ],
+      "ruleset": "russian",
+      "names:en": [
+        "Belarus"
+      ]
+    },
+    "LC": {
+      "centroid": [
+        13.883333,
+        -60.966667
+      ],
+      "names:cs": [
+        "Svatá Lucie"
+      ],
+      "code": "LC",
+      "neighbours": [
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Saint Lucia"
+      ]
+    },
+    "NI": {
+      "centroid": [
+        13.0,
+        -85.0
+      ],
+      "names:cs": [
+        "Nikaragua"
+      ],
+      "code": "NI",
+      "neighbours": [
+        "CR",
+        "HN",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Nicaragua"
+      ]
+    },
+    "LV": {
+      "centroid": [
+        57.0,
+        25.0
+      ],
+      "names:cs": [
+        "Lotyšsko"
+      ],
+      "code": "LV",
+      "neighbours": [
+        "LT",
+        "EE",
+        "BY",
+        "RU",
+        "CZ"
+      ],
+      "ruleset": "slavic",
+      "names:en": [
+        "Latvia"
+      ]
+    },
+    "CN": {
+      "centroid": [
+        35.0,
+        105.0
+      ],
+      "names:cs": [
+        "Čína"
+      ],
+      "code": "CN",
+      "neighbours": [
+        "LA",
+        "BT",
+        "TJ",
+        "KZ",
+        "MN",
+        "AF",
+        "NP",
+        "MM",
+        "KG",
+        "PK",
+        "KP",
+        "VN",
+        "IN",
+        "CZ"
+      ],
+      "ruleset": "chinese",
+      "names:en": [
+        "China"
+      ]
+    },
+    "CG": {
+      "centroid": [
+        -1.0,
+        15.0
+      ],
+      "names:cs": [
+        "Kongo, republika"
+      ],
+      "code": "CG",
+      "neighbours": [
+        "CF",
+        "GA",
+        "CD",
+        "CM",
+        "AO",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Republic of the Congo"
+      ]
+    },
+    "MR": {
+      "centroid": [
+        20.0,
+        -12.0
+      ],
+      "names:cs": [
+        "Mauritánie"
+      ],
+      "code": "MR",
+      "neighbours": [
+        "SN",
+        "DZ",
+        "EH",
+        "ML",
+        "CZ"
+      ],
+      "ruleset": "generic",
+      "names:en": [
+        "Mauritania"
+      ]
+    }
+  },
+  "substitutions": [
+    {
+      "regex": "ě",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "e"
+      ],
+      "web": true
+    },
+    {
+      "regex": "š",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "s"
+      ],
+      "web": true
+    },
+    {
+      "regex": "č",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "c"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ř",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "r"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ž",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "z"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ý",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "y"
+      ],
+      "web": true
+    },
+    {
+      "regex": "á",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "a"
+      ],
+      "web": true
+    },
+    {
+      "regex": "í",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "i"
+      ],
+      "web": true
+    },
+    {
+      "regex": "é",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "e"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ó",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "o"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ú",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "u"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ů",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "ŭ",
+        "ů",
+        "u"
+      ],
+      "web": false
+    },
+    {
+      "regex": "ů",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "u"
+      ],
+      "web": false
+    },
+    {
+      "regex": "ď",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "d"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ť",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "t"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ň",
+      "rulesets": [
+        "generic"
+      ],
+      "variants": [
+        "n"
+      ],
+      "web": true
+    },
+    {
+      "regex": "\\s+-\\s+",
+      "rulesets": "all",
+      "variants": [
+        "-"
+      ],
+      "web": true
+    },
+    {
+      "regex": "gorod",
+      "rulesets": "all",
+      "variants": [
+        ""
+      ],
+      "web": true
+    },
+    {
+      "regex": "obl\\.",
+      "rulesets": "all",
+      "variants": [
+        "oblast"
+      ],
+      "web": true
+    },
+    {
+      "regex": "\\s+\\w+\\s*oblast",
+      "rulesets": "all",
+      "variants": [
+        ""
+      ],
+      "web": true
+    },
+    {
+      "regex": "sk(a|á|aja|aya) oblast",
+      "rulesets": "all",
+      "variants": [
+        "",
+        "sk"
+      ],
+      "web": true
+    },
+    {
+      "regex": "\\,.*",
+      "rulesets": "all",
+      "variants": [
+        ""
+      ],
+      "web": true
+    },
+    {
+      "regex": "\\b.{1,3}\\.",
+      "rulesets": "all",
+      "variants": [
+        ""
+      ],
+      "web": true
+    },
+    {
+      "regex": "cy",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "ti"
+      ],
+      "web": true
+    },
+    {
+      "regex": "š",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "s"
+      ],
+      "web": true
+    },
+    {
+      "regex": "č",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "c"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ě",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "e"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ý",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "y"
+      ],
+      "web": true
+    },
+    {
+      "regex": "í",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "i"
+      ],
+      "web": true
+    },
+    {
+      "regex": "y",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "i"
+      ],
+      "web": false
+    },
+    {
+      "regex": "é",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "e"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ny\\b",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "ni"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ty\\b",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "ti"
+      ],
+      "web": true
+    },
+    {
+      "regex": "shty\\b",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "sti"
+      ],
+      "web": false
+    },
+    {
+      "regex": "st\\b",
+      "rulesets": [
+        "romanian"
+      ],
+      "variants": [
+        "st",
+        "sti"
+      ],
+      "web": false
+    },
+    {
+      "regex": "v\\.",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "velykyj",
+        "velyka",
+        "vyshni",
+        "vyshna"
+      ],
+      "web": false
+    },
+    {
+      "regex": "vel\\.",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "velykyj",
+        "velyka"
+      ],
+      "web": true
+    },
+    {
+      "regex": "velkyj",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "velykyj"
+      ],
+      "web": true
+    },
+    {
+      "regex": "polana|polyana",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "poliana"
+      ],
+      "web": true
+    },
+    {
+      "regex": "r-n",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "rayon"
+      ],
+      "web": true
+    },
+    {
+      "regex": "(?<![cskz])h",
+      "rulesets": [
+        "russian"
+      ],
+      "variants": [
+        "g"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ý",
+      "rulesets": [
+        "polish",
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "y"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ď",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "d'"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ť",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "t'"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ň\\b",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "n'"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ň",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "ny"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ě",
+      "rulesets": [
+        "polish",
+        "ukrainian",
+        "russian"
+      ],
+      "variants": [
+        "ie"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ž",
+      "rulesets": [
+        "polish",
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "zh"
+      ],
+      "web": true
+    },
+    {
+      "regex": "šč",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "sch"
+      ],
+      "web": true
+    },
+    {
+      "regex": "sh?ch?",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "sc",
+        "sch",
+        "shch"
+      ],
+      "web": false
+    },
+    {
+      "regex": "ch",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "kh"
+      ],
+      "web": true
+    },
+    {
+      "regex": "c",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "ts"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ť",
+      "rulesets": [
+        "polish"
+      ],
+      "variants": [
+        "cz"
+      ],
+      "web": true
+    },
+    {
+      "regex": "č",
+      "rulesets": [
+        "polish"
+      ],
+      "variants": [
+        "cz"
+      ],
+      "web": true
+    },
+    {
+      "regex": "č",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "ch"
+      ],
+      "web": true
+    },
+    {
+      "regex": "š",
+      "rulesets": [
+        "polish"
+      ],
+      "variants": [
+        "sz"
+      ],
+      "web": true
+    },
+    {
+      "regex": "š",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "sh"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ij",
+      "rulesets": [
+        "russian"
+      ],
+      "variants": [
+        "y"
+      ],
+      "web": true
+    },
+    {
+      "regex": "yj",
+      "rulesets": [
+        "russian"
+      ],
+      "variants": [
+        "yi"
+      ],
+      "web": true
+    },
+    {
+      "regex": "j",
+      "rulesets": [
+        "russian"
+      ],
+      "variants": [
+        "y"
+      ],
+      "web": true
+    },
+    {
+      "regex": "oj",
+      "rulesets": [
+        "russian"
+      ],
+      "variants": [
+        "oi"
+      ],
+      "web": true
+    },
+    {
+      "regex": "g",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "h"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ov",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "ov",
+        "iv"
+      ],
+      "web": false
+    },
+    {
+      "regex": "evk",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "evk",
+        "ivk"
+      ],
+      "web": false
+    },
+    {
+      "regex": "ozh",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "ozh",
+        "izh"
+      ],
+      "web": false
+    },
+    {
+      "regex": "yje",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "ye"
+      ],
+      "web": true
+    },
+    {
+      "regex": "il",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "il'"
+      ],
+      "web": true
+    },
+    {
+      "regex": "j",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "i"
+      ],
+      "web": true
+    },
+    {
+      "regex": "x",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "ks"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ská",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "skaya"
+      ],
+      "web": true
+    },
+    {
+      "regex": "sky\\b",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "skiy"
+      ],
+      "web": true
+    },
+    {
+      "regex": "ský",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "skiy"
+      ],
+      "web": true
+    },
+    {
+      "regex": "u\\b",
+      "rulesets": [
+        "russian"
+      ],
+      "variants": [
+        "e"
+      ],
+      "web": true
+    },
+    {
+      "regex": "i|y",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "i",
+        "y"
+      ],
+      "web": false
+    },
+    {
+      "regex": "in+i",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "ini",
+        "inni"
+      ],
+      "web": false
+    },
+    {
+      "regex": "yn+y",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "yny",
+        "ynny"
+      ],
+      "web": false
+    },
+    {
+      "regex": "chok|chuk",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "chok",
+        "chuk"
+      ],
+      "web": false
+    },
+    {
+      "regex": "i?e",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "ie",
+        "e"
+      ],
+      "web": false
+    },
+    {
+      "regex": "(?<![cskz])(?:h|g)",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "h",
+        "g"
+      ],
+      "web": false
+    },
+    {
+      "regex": "kh|ch",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "kh",
+        "ch"
+      ],
+      "web": false
+    },
+    {
+      "regex": "skiy",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "skiy",
+        "sk",
+        ""
+      ],
+      "web": false
+    },
+    {
+      "regex": "skay?a?",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "skaya",
+        "sk",
+        ""
+      ],
+      "web": false
+    },
+    {
+      "regex": "v|w",
+      "rulesets": [
+        "polish"
+      ],
+      "variants": [
+        "v",
+        "w"
+      ],
+      "web": false
+    },
+    {
+      "regex": "ž|ź",
+      "rulesets": [
+        "polish"
+      ],
+      "variants": [
+        "ž",
+        "ź",
+        "z"
+      ],
+      "web": false
+    },
+    {
+      "regex": "ce",
+      "rulesets": [
+        "polish"
+      ],
+      "variants": [
+        "ce",
+        "ca"
+      ],
+      "web": false
+    },
+    {
+      "regex": "(?<=[dtn])(\\b|-)",
+      "rulesets": [
+        "russian", "ukrainian"
+      ],
+      "variants": [
+        "'",
+        ""
+      ],
+      "web": false
+    },
+    {
+      "regex": "sz",
+      "rulesets": [
+        "polish"
+      ],
+      "variants": [
+        "sz",
+        "ś"
+      ],
+      "web": false
+    }
+  ],
+  "geocoders" : [
+    {
+      "name" : "geonames",
+      "web" : false
+    }
+  ],
+  "continueProbability" : 0.99
+}
