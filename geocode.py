@@ -256,27 +256,31 @@ class Transcriptor:
   }
 
   def __init__(self, config, web=False):
+    # prepare country lookup and transcription rules from the configuration
     self.countries = config['countries']
     self.countries[None] = self.DEFAULT_COUNTRY
     self.countryNameIndex = self.prepareCountryNameIndex(self.countries)
-    # print(str(self.countryNameIndex).encode('cp852', errors='ignore'))
     self.substitutions = self.prepareSubstitutions(config['substitutions'], web)
     self.failedCountries = set()
     
   def __call__(self, query, cdef=None):
+    '''Transcribes a given query using rulesets configured for the given
+    country (which may be defined using an ISO code or a name that is in the
+    configuration).
+    Returns a list of possible transcriptions.'''
     country = self.countries[self.getCountryCode(cdef)]
     toTrans = query.lower()
-    # print(country['ruleset'])
     results = self.transcribe(toTrans, self.substitutions[country['ruleset']])
-    basic = set(results)
+    basic = set(results) # retain only unique transcriptions
+    # try neighbouring countries too
     for rulesetName in self.getNeighRulesetNames(country):
-      # print(rulesetName)
       neighVars = [item for item in self.transcribe(toTrans, self.substitutions[rulesetName]) if item not in basic]
       results.extend(neighVars)
       basic.update(neighVars)
     return list(results)
     
   def getNeighRulesetNames(self, country):
+    '''Returns all rulesets of countries that neighbour the given country.'''
     rulesets = set()
     for neighCode in country['neighbours']: # try neighbouring country rulesets
       try:
@@ -286,8 +290,10 @@ class Transcriptor:
     return rulesets
     
   def getCountryCode(self, cdef):
-    '''Given an ISO country code or name specified in config, returns the country ISO code.
-    If the country is not found in config, returns None -> DEFAULT_COUNTRY is selected.'''
+    '''Given an ISO country code or name specified in config, returns
+    the ISO code of that country.
+    If the country is not found in config, returns None, which means that
+    DEFAULT_COUNTRY is selected.'''
     if cdef is None:
       return None
     elif len(cdef) == 2 and cdef.upper() in self.countries: # country code
@@ -303,15 +309,17 @@ class Transcriptor:
     
   @classmethod
   def transcribe(cls, start, rules):
+    '''Generates all variants of the given start query using the given transcription rules.'''
     current = set([start])
     for regex, joinvars in rules: # apply every substitution rule
       new = set()
       # if joinvars == ['']: print(regex)
       for var in current: # for every current variant before this rule
         parts = regex.sub('@', var).split('@') # find all occurences of the match
-        # the @ is used as a hack to avoid re.split which does not split on zero-width patterns
-        # such as word boundaries
-        # now create all variants by substituting it by all permutations of variants mentioned
+        # the @ is used as a hack to avoid re.split which does
+        # not split on zero-width patterns such as word boundaries
+        # now create all variants by filling the spaces with all permutations
+        # of variants mentioned
         new.update(cls.unsplit(parts, joinvars))
         for joinvar in joinvars: 
           new.add(joinvar.join(parts))
@@ -334,6 +342,7 @@ class Transcriptor:
           
   @staticmethod
   def prepareCountryNameIndex(countries):
+    '''Prepares the country list from the config for fast name lookups.'''
     cnindex = {}
     for cdict in countries.values():
       ccode = cdict['code']
@@ -351,7 +360,8 @@ class Transcriptor:
     '''Prepares the substitutions for the transcriptor based on the given config.
     Each substitution has a regular expression determining its usage,
     a handful of variants that the transcriptor tries
-    and a handful of rulesets that determine for which countries/languages it should be used.'''
+    and a handful of rulesets that determine for which countries/languages
+    it should be used.'''
     prepared = {}
     common = []
     for subConf in subConfList:
@@ -371,6 +381,8 @@ class Transcriptor:
 
     
 class ReaderWriter:
+  '''Reads and writes location CSV files.'''
+
   def __init__(self, geocoder, statecol=-1, namecol=-1):
     self.geocoder = geocoder
     self.statecol = None if statecol < 1 else statecol - 1
@@ -432,8 +444,8 @@ class ReaderWriter:
 DESCRIPTION = '''Geocodes the provided CSV file with location names and countries.
 Tries to accommodate for spelling and transcription mistakes.
 Uses a local GeoNames database first (if you don't have it, use load_geonames to
-create it). In case of failure, turns to Web geocoding services (MapQuest, OSM,
-ArcGIS, Yandex and OpenCage).'''
+create it). In case of failure, turns to Web geocoding services if they are enabled
+(MapQuest, OSM, ArcGIS, Yandex and OpenCage).'''
   
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description=DESCRIPTION)
@@ -449,18 +461,3 @@ if __name__ == '__main__':
   io = ReaderWriter(geocoder, statecol=args.statecol, namecol=args.namecol)
   io.run(args.input, args.output, args.encoding)
 
-  # gc = GeonamesGeocoder('czgeo.db')
-  # x = input()
-  # while x:
-    # print(tuple(gc.geocode(x, exactly_one=True, country='CZ')))
-    # x = input()
-  # print([l.raw for l in gc.geocode('Nove Mesto nad Metuji')])
-
-  # print((args.input, args.output, args.statecol, args.namecol, args.config))
-  
-  # print(Transcriptor.transcribe('whatever', [
-    # (re.compile('a'), ('y', )),
-    # (re.compile('e'), ('ei', 'yi'))
-  # ]))
-    
-    

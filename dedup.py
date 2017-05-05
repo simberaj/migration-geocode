@@ -1,5 +1,7 @@
 import sys
 
+'''Removes duplicate lines from a given file.'''
+
 if __name__ == '__main__':
   unique = set()
   with open(sys.argv[1], encoding='utf8') as fin:

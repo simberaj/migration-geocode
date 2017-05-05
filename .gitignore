@@ -1,10 +1,6 @@
-*
-
-!.gitignore
-!conf.json
-!dbinit.sql
-!dbpostfill.sql
-!dedup.py
-!geocode.py
-!load_geonames.py
-!geopy/*
+__pycache__/
+inputs/
+new_data/
+old_confs/
+*.zip
+*.db
