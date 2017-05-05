@@ -68,7 +68,7 @@ class GeocoderFarm:
       self.options.append(self.createOption(optDef, **moreconf))
     self.allOptions = self.options.copy()
     self.contProb = config['continueProbability'] if 'continueProbability' in config else 0
-    self.history = []
+    self.history = collections.defaultdict(list)
     # self.geocoders = {False : [GeonamesGeocoder(db)] if db else [], True : []}
     
   @staticmethod
@@ -115,10 +115,10 @@ class GeocoderFarm:
     # self.fromHistory(name, country) # no success, try if something similar succeeded
   
   def record(self, name, country, result):
-    self.history.append((name, country, result))
+    self.history[name[0]].append((name, country, result))
   
   def fromHistory(self, fromName, fromCountry):
-    for toName, toCountry, result in self.history:
+    for toName, toCountry, result in self.history[fromName[0]]:
       if levenshtein(fromName, toName) <= 1:
         return self.toList(result)
     return [] # no success
