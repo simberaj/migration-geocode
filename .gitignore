@@ -7,3 +7,4 @@
 !dedup.py
 !geocode.py
 !load_geonames.py
+!geopy/
