@@ -110,7 +110,6 @@ class GeocoderFarm:
         if result:
           self.record(name, country, result)
           return self.toList(result)
-        contProb *= self.contProb
         i += 1
     return [] 
     # self.fromHistory(name, country) # no success, try if something similar succeeded
@@ -174,8 +173,9 @@ class GeocoderOption:
   def query(self, name, country=None):
     variants = self.transcriptor(name, country)
     if name not in variants: variants.append(name)
-    # print(variants)
+    # print(name, country)
     for var in variants:
+      # print(var)
       direct = self.geocoder.geocode(var)
       if direct:
         return direct

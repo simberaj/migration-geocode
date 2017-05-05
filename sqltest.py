@@ -2,7 +2,9 @@ import sqlite3, os
 
 STDOUT_ENCODING = 'cp852'
 
-dbname = input('Enter database name: ')
+print('This is a utility to perform SQL command to a SQLite database.')
+print()
+dbname = input('Enter database name (in current folder, without extension): ')
 path = os.path.join(os.getcwd(), dbname + '.db')
 
 con = sqlite3.connect(path)
@@ -10,10 +12,10 @@ con.isolation_level = None
 cur = con.cursor()
 
 buff = ""
-
+print()
 print("Enter your SQL commands to execute in sqlite3.")
 print("Enter a blank line to exit.")
-
+print()
 while True:
     line = input()
     if line == "":
