@@ -64,6 +64,9 @@ Příklad:
 
 Pokud chcete za běhu vidět, jaké dotazy jsou po transkripci posílány do databáze, stačí odkomentovat funkce `print` v metodě `Geocoder.query` (kolem řádku 170).
 
+=== Zpětné mapování
+Pro vylepšení běhu nástroje je na konci geokódování na neúspěšné dotazy aplikováno zpětné mapování. Při něm je pro každý neúspěšný dotaz prohledán seznam všech úspěšných dotazů začínajících stejným písmenem. Pokud má některý z nich Levenshteinovu vzdálenost rovnou 1, je považován za identický a doposud neúspěšný dotaz je goekódován tímto výsledkem.
+
 == Geokódovací databáze
 Před spuštěním programu je nejprve nutné vytvořit geokódovací databázi (soubor `geo.db`). Ta se sama stáhne z webu Geonames.org - jde o globální databázi jmen a souřadnic.
 
