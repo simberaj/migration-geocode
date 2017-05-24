@@ -118,9 +118,10 @@ class GeocoderFarm:
     self.history[name[0]].append((name, country, result))
   
   def fromHistory(self, fromName, fromCountry):
-    for toName, toCountry, result in self.history[fromName[0]]:
-      if levenshtein(fromName, toName) <= 1:
-        return self.toList(result)
+    if fromName:
+      for toName, toCountry, result in self.history[fromName[0]]:
+        if levenshtein(fromName, toName) <= 1:
+          return self.toList(result)
     return [] # no success
 
     
@@ -411,12 +412,15 @@ class ReaderWriter:
               todo.append(line)
             i += 1
             print(i, end='\r')
-          print('resolving todos')
+          print('resolving todos', end='\r')
+          t = 0
           for line in todo:
             name, country = line[self.namecol], line[self.statecol]
             histres = self.geocoder.fromHistory(name, country)
             if histres:
               suc += 1
+            t += 1
+            print('resolving todos: {}/{}'.format(t, len(todo)), end='\r')
             writer.writerow(line + histres)
     print(suc, 'out of', i, 'lines geocoded: {:.2%}'.format(suc / i)) 
       
