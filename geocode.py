@@ -55,7 +55,7 @@ def geonamesImportance(loccat, population=None):
     return GN_LESSER_IMPORT[loccat]
 
 class GeocoderFarm:
-  ADD_INFO_KEYS = ['locerr', 'source', 'choices', 'id', 'type', 'importance']
+  ADD_INFO_KEYS = ['locerr', 'country', 'source', 'choices', 'id', 'type', 'importance']
 
   def __init__(self, config, db=None):
     if not isinstance(config, dict): config = self.loadConfig(config)
@@ -84,7 +84,12 @@ class GeocoderFarm:
     return GeocoderOption.create(optDef['name'], transcriptor, isWeb, **options)
     
   def toList(self, geoResult):
-    return [geoResult.address, geoResult.latitude, geoResult.longitude] + [geoResult.raw[key] for key in self.ADD_INFO_KEYS]
+    return [
+      geoResult.address,
+      geoResult.latitude,
+      geoResult.longitude,
+      # self.options[0].getCountryCode(geoResult.raw[])
+    ] + [geoResult.raw[key] for key in self.ADD_INFO_KEYS]
   
   def geocodeToList(self, name, country):
     contProb = 1
@@ -241,6 +246,8 @@ class GeonamesGeocoder:
       return None
   
   def unfold(self, qryres):
+    for res in qryres:
+      print(dict(res))
     return [geopy.location.Location(address=(res['country'] + ', ' + res['name'].upper()), point=geopy.location.Point(res['wgslat'], res['wgslon']), raw=dict(res)) for res in qryres]
       
       
