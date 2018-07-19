@@ -3,10 +3,8 @@ import re
 import itertools
 import argparse
 import collections
-# import sqlite3
 import csv
 import json
-# import random
 import contextlib
 import warnings
 
@@ -15,7 +13,6 @@ import psycopg2
 import psycopg2.extras
 
 DEFAULT_CONF = 'conf.json'
-# DEFAULT_DBNAME = 'geo.db'
 
 # generic replacement of "-" to space
 # remove all meaningful state names from the query, using levenshtein 2
@@ -207,29 +204,7 @@ class GeocoderFarm:
             if name in gclass.names:
                 return gclass(name, settings, fuzzy=(not no_fuzzy))
                 
-        
-
-      # try:
-        # # print(name)
-        # # print(country)
-        # result = self.options[i].geocode(name=name, country=country)
-      # except (geopy.exc.GeocoderQuotaExceeded, 
-              # geopy.exc.GeocoderAuthenticationFailure,
-              # geopy.exc.GeocoderInsufficientPrivileges,
-              # geopy.exc.GeocoderUnavailable,
-              # geopy.exc.GeocoderNotFound) as gexc:
-        # print('geocoder {} failed, removing; reason: {}'.format(self.options[i].name, gexc))
-        # self.options.pop(i)
-      # except (geopy.exc.GeocoderTimedOut,
-              # geopy.exc.GeocoderParseError,
-              # geopy.exc.GeocoderQueryError):
-        # continue # a problem with a particular geocoder, try again later perhaps
-      # else:
-        # if result:
-          # self.record(name, country, result)
-          # return self.toList(result)
-
-  
+ 
 
     
 # output format: found name, lat, long, locerr, source, choices, id, type, importance
@@ -330,10 +305,6 @@ class GeopyGeocoder(Geocoder):
     
 GeocoderFarm.GEOCODERS = [GeonamesGeocoder, GeopyGeocoder]
   
-# TODO  
-# move country detection from transcriptor to farm: country translator
-# but keep rulesets within transcriptor
-# add geonames geocoding by country
   
 class CountryRegister:
     DEFAULT_COUNTRY = {
@@ -492,29 +463,24 @@ class Ruleset:
         
     def apply(self, string):
         '''Generates all variants of the given start query using the given transcription rules.'''
-        # print(string)
         string = string.lower()
         current = [string]
         for rule in self.rules: # apply every substitution rule
-            # print(rule)
             new = []
             for var in current: # for every current variant before this rule
                 for newvar in rule.apply(var):
-                    # print(' ', newvar)
                     if newvar not in new:
                         new.append(newvar)
             current = new
         current = current[:self.maxvars]
         if string not in current:
             current.append(string)
-        # raise RuntimeError
         return current
     
         
 class Transcriptor:
     def __init__(self, rulesets):
         self.rulesets = rulesets
-        # self.index = {(ruleset.name, ruleset.is_web) : ruleset for ruleset in self.rulesets}
     
     def get_ruleset(self, name, is_web):
         return self.rulesets[(name,is_web)]
@@ -546,182 +512,6 @@ class Transcriptor:
         ))
         
   
-# class Transcriptor:
-  # '''Performs place name transcriptions to account for the inaccuracies present
-  # in the input and to match them to the name database (which contains mostly
-  # English-transcribed names).'''
-
-  # def __init__(self, substitutions, web=False):
-    # # prepare country lookup and transcription rules from the configuration
-    # self.substitutions = self.prepareSubstitutions(substitutions, web)
-    # self.failedCountries = set()
-    
-  # def __call__(self, query, cdef=None):
-    # '''Transcribes a given query using rulesets configured for the given
-    # country (which may be defined using an ISO code or a name that is in the
-    # configuration).
-    # Returns a list of possible transcriptions.'''
-    # country = self.countries[self.getCountryCode(cdef)]
-    # toTrans = query.lower()
-    # results = self.transcribe(toTrans, self.substitutions[country['ruleset']])
-    # basic = set(results) # retain only unique transcriptions
-    # # try neighbouring countries too
-    # for rulesetName in self.getNeighRulesetNames(country):
-      # neighVars = [item for item in self.transcribe(toTrans, self.substitutions[rulesetName]) if item not in basic]
-      # results.extend(neighVars)
-      # basic.update(neighVars)
-    # return list(results)
-    
-  # def getNeighRulesetNames(self, country):
-    # '''Returns all rulesets of countries that neighbour the given country.'''
-    # rulesets = set()
-    # for neighCode in country['neighbours']: # try neighbouring country rulesets
-      # try:
-        # rulesets.add(self.countries[neighCode]['ruleset'])
-      # except KeyError:
-        # pass # ignore countries not found
-    # return rulesets
-    
-  # def getCountryCode(self, cdef):
-    # '''Given an ISO country code or name specified in config, returns
-    # the ISO code of that country.
-    # If the country is not found in config, returns None, which means that
-    # DEFAULT_COUNTRY is selected.'''
-    # if cdef is None:
-      # return None
-    # elif len(cdef) == 2 and cdef.upper() in self.countries: # country code
-      # return cdef.upper()
-    # else:
-      # try:
-        # return self.countryNameIndex[cdef.lower()]
-      # except KeyError:
-        # if cdef not in self.failedCountries:
-          # warnings.warn('country {} not found in country list, performance will be reduced'.format(cdef))
-          # self.failedCountries.add(cdef)
-        # return None
-    
-  # @classmethod
-  # def transcribe(cls, start, rules):
-    # '''Generates all variants of the given start query using the given transcription rules.'''
-    # current = set([start])
-    # for regex, joinvars in rules: # apply every substitution rule
-      # new = set()
-      # # if joinvars == ['']: print(regex)
-      # for var in current: # for every current variant before this rule
-        # parts = regex.sub('@', var).split('@') # find all occurences of the match
-        # # the @ is used as a hack to avoid re.split which does
-        # # not split on zero-width patterns such as word boundaries
-        # # now create all variants by filling the spaces with all permutations
-        # # of variants mentioned
-        # new.update(cls.unsplit(parts, joinvars))
-        # for joinvar in joinvars: 
-          # new.add(joinvar.join(parts))
-      # current = new
-    # current.discard(start)
-    # return list(current) + [start]
-          
-  # @staticmethod
-  # def unsplit(spl, pattern):
-    # permno = len(spl) - 1
-    # # for all possible permutations of replacement variants
-    # for permut in itertools.product(pattern, repeat=permno):
-      # # join the spl by permut joiners
-      # tmp = []
-      # for i in range(permno):
-        # tmp.append(spl[i])
-        # tmp.append(permut[i])
-      # tmp.append(spl[-1])
-      # yield ''.join(tmp)
-
-          
-  
-  # @staticmethod
-  # def prepareSubstitutions(subConfList, web=False):
-    # '''Prepares the substitutions for the transcriptor based on the given config.
-    # Each substitution has a regular expression determining its usage,
-    # a handful of variants that the transcriptor tries
-    # and a handful of rulesets that determine for which countries/languages
-    # it should be used.'''
-    # prepared = {}
-    # common = []
-    # for subConf in subConfList:
-      # if not web or subConf['web']: # exclude non-web substitutions from web queries
-        # regex = re.compile(subConf['regex']) # compile for faster matching
-        # subst = (regex, subConf['variants'])
-        # if subConf['rulesets'] == 'all':
-          # common.append(subst)
-          # for lst in prepared.values():
-            # lst.append(subst) # all existing rulesets, propagate to the unknown afterwards
-        # else:
-          # for ruleset in subConf['rulesets']: # all rulesets that are concerned
-            # if ruleset not in prepared:
-              # prepared[ruleset] = common.copy() # all common encountered before
-            # prepared[ruleset].append(subst)
-    # return collections.defaultdict(lambda: common.copy(), prepared)
-
-    
-# class ReaderWriter:
-  # '''Reads and writes location CSV files.'''
-
-  # def __init__(self, geocoder, statecol=-1, namecol=-1):
-    # self.geocoder = geocoder
-    # self.statecol = None if statecol < 1 else statecol - 1
-    # if namecol < 1:
-      # raise ValueError('invalid name column index: ' + str(namecol))
-    # self.namecol = namecol - 1
-    
-  # def run(self, input, output, encoding='utf8'):
-    # todo = []
-    # for inpath, outpath in self.generatePaths(input, output):
-      # with open(inpath, encoding=encoding, newline='') as infile:
-        # dialect = csv.Sniffer().sniff(infile.read(1024))
-        # infile.seek(0)
-        # reader = csv.reader(infile, dialect)
-        # with open(outpath, 'a', encoding=encoding, newline='') as outfile:
-          # writer = csv.writer(outfile, dialect)
-          # i = 0
-          # suc = 0
-          # for line in reader:
-            # name, country = line[self.namecol], line[self.statecol]
-            # geores = self.geocoder.geocodeToList(name, country)
-            # if geores:
-              # suc += 1
-              # writer.writerow(line + geores)
-            # else:
-              # todo.append(line)
-            # i += 1
-            # print(i, end='\r')
-          # print('resolving todos', end='\r')
-          # t = 0
-          # for line in todo:
-            # name, country = line[self.namecol], line[self.statecol]
-            # histres = self.geocoder.fromHistory(name, country)
-            # if histres:
-              # suc += 1
-            # t += 1
-            # print('resolving todos: {}/{}'.format(t, len(todo)), end='\r')
-            # writer.writerow(line + histres)
-    # print(suc, 'out of', i, 'lines geocoded: {:.2%}'.format(suc / i)) 
-      
-  # @classmethod
-  # def generatePaths(cls, input, output):
-    # # if the input is a directory, examine all files in it
-    # # if the output is a directory, create the files with the same names
-    # # if the output is a file, all the content is merged into it
-    # if os.path.isdir(input):
-      # inputs = [os.path.join(input, fname) for fname in os.listdir(input)]
-    # else:
-      # inputs = [input]
-    # if os.path.isdir(output):
-      # outputs = [os.path.join(output, os.path.basename(inp)) for inp in inputs]
-    # else:
-      # if os.path.isfile(output): os.unlink(output)
-      # outputs = [output] * len(inputs)
-    # for i in range(len(inputs)):
-      # yield inputs[i], outputs[i]
-    
-     
-      
       
   
 DESCRIPTION = '''Geocodes the provided CSV file with location names and countries.
