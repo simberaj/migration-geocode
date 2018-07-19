@@ -1,11 +1,9 @@
-import os
 import re
 import itertools
 import argparse
 import collections
 import csv
 import json
-import contextlib
 import warnings
 
 import geopy
@@ -24,7 +22,10 @@ Placename = collections.namedtuple('Placename', 'name country')
 
 class CSVIO:
     MAIN_LOC_FIELDS = ['wgslon', 'wgslat', 'address']
-    AUX_LOC_FIELDS = ['locerr', 'type', 'population', 'country_match', 'name_match', 'source', 'id']
+    AUX_LOC_FIELDS = [
+        'locerr', 'type', 'population',
+        'country_match', 'name_match', 'source', 'id'
+    ]
     
     def __init__(self, filename, header=True, encoding='utf8', **csvconf):
         self.csvconf = csvconf
@@ -53,9 +54,13 @@ class Reader(CSVIO):
         for line in self.gate:
             yield Placename(
                 line[self.name_field],
-                line[self.country_field] if self.country_field is not None else None,
+                (
+                    line[self.country_field]
+                    if self.country_field is not None
+                    else None
+                ),
             ), line
-        
+
     def _default_csv_config(self):
         dialect = csv.Sniffer().sniff(self.file.read(1024))
         self.file.seek(0)
@@ -344,7 +349,10 @@ class CountryRegister:
                 return self.index[cdef.lower()]
             except KeyError:
                 if cdef not in self.failed:
-                    warnings.warn('country {} not found in country list, performance will be reduced'.format(cdef))
+                    warnings.warn(
+                        'country {} not found in country list,\
+                        performance will be reduced'.format(cdef)
+                    )
                     self.failed.add(cdef)
                 return None
         
@@ -428,7 +436,6 @@ class StaticRegexReplacement(Replacement):
         return '<VarRegex: {0.pattern!r} -> {0.replacements!r}>'.format(self)
      
     
-        
 class DynamicRegexReplacement(StaticRegexReplacement):
     def apply(self, input):
         variants = []
@@ -505,7 +512,8 @@ class Transcriptor:
     
     @staticmethod
     def _find_all_ruleset_names(substitutions):
-        return list(set(name
+        return list(set(
+            name
             for rule in substitutions
                 for name in rule['rulesets']
                 if rule['rulesets'] != 'all'
