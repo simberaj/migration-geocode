@@ -3,5 +3,7 @@ inputs/
 new_data/
 old_confs/
 wave/
+src/
 *.zip
 *.db
+dbconf.json

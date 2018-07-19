@@ -669,7 +669,7 @@
         "KP",
         "CZ"
       ],
-      "ruleset": "chinese",
+      "ruleset": "generic",
       "names:en": [
         "South Korea"
       ]
@@ -1297,7 +1297,7 @@
         "RU",
         "CZ"
       ],
-      "ruleset": "chinese",
+      "ruleset": "generic",
       "names:en": [
         "North Korea"
       ]
@@ -1959,7 +1959,7 @@
         "RS",
         "CZ"
       ],
-      "ruleset": "generic",
+      "ruleset": "hungarian",
       "names:en": [
         "Hungary"
       ]
@@ -2849,7 +2849,7 @@
         "IN",
         "CZ"
       ],
-      "ruleset": "chinese",
+      "ruleset": "generic",
       "names:en": [
         "China"
       ]
@@ -2900,7 +2900,7 @@
   },
   "substitutions": [
     {
-      "regex": "ě",
+      "string": "ě",
       "rulesets": [
         "generic"
       ],
@@ -2910,7 +2910,7 @@
       "web": true
     },
     {
-      "regex": "š",
+      "string": "š",
       "rulesets": [
         "generic"
       ],
@@ -2920,17 +2920,18 @@
       "web": true
     },
     {
-      "regex": "č",
+      "string": "č",
       "rulesets": [
         "generic"
       ],
       "variants": [
-        "c"
+        "c",
+        "ch"
       ],
       "web": true
     },
     {
-      "regex": "ř",
+      "string": "ř",
       "rulesets": [
         "generic"
       ],
@@ -2940,7 +2941,7 @@
       "web": true
     },
     {
-      "regex": "ž",
+      "string": "ž",
       "rulesets": [
         "generic"
       ],
@@ -2950,7 +2951,7 @@
       "web": true
     },
     {
-      "regex": "ý",
+      "string": "ý",
       "rulesets": [
         "generic"
       ],
@@ -2960,7 +2961,7 @@
       "web": true
     },
     {
-      "regex": "á",
+      "string": "á",
       "rulesets": [
         "generic"
       ],
@@ -2970,7 +2971,7 @@
       "web": true
     },
     {
-      "regex": "í",
+      "string": "í",
       "rulesets": [
         "generic"
       ],
@@ -2980,7 +2981,7 @@
       "web": true
     },
     {
-      "regex": "é",
+      "string": "é",
       "rulesets": [
         "generic"
       ],
@@ -2990,7 +2991,7 @@
       "web": true
     },
     {
-      "regex": "ó",
+      "string": "ó",
       "rulesets": [
         "generic"
       ],
@@ -3000,7 +3001,7 @@
       "web": true
     },
     {
-      "regex": "ú",
+      "string": "ú",
       "rulesets": [
         "generic"
       ],
@@ -3010,29 +3011,18 @@
       "web": true
     },
     {
-      "regex": "ů",
+      "string": "ů",
       "rulesets": [
         "generic"
       ],
       "variants": [
-        "ŭ",
         "ů",
         "u"
       ],
       "web": false
     },
     {
-      "regex": "ů",
-      "rulesets": [
-        "generic"
-      ],
-      "variants": [
-        "u"
-      ],
-      "web": false
-    },
-    {
-      "regex": "ď",
+      "string": "ď",
       "rulesets": [
         "generic"
       ],
@@ -3042,7 +3032,7 @@
       "web": true
     },
     {
-      "regex": "ť",
+      "string": "ť",
       "rulesets": [
         "generic"
       ],
@@ -3052,7 +3042,7 @@
       "web": true
     },
     {
-      "regex": "ň",
+      "string": "ň",
       "rulesets": [
         "generic"
       ],
@@ -3070,7 +3060,7 @@
       "web": true
     },
     {
-      "regex": "gorod",
+      "regex": "\\s*\\bgorod",
       "rulesets": "all",
       "variants": [
         ""
@@ -3078,7 +3068,17 @@
       "web": true
     },
     {
-      "regex": "obl\\.",
+      "regex": "o\\.$",
+      "rulesets": [
+        "ukrainian", "russian"
+      ],
+      "variants": [
+        "oblast"
+      ],
+      "web": true
+    },
+    {
+      "regex": "obl(\\.|$)",
       "rulesets": "all",
       "variants": [
         "oblast"
@@ -3086,7 +3086,15 @@
       "web": true
     },
     {
-      "regex": "\\s+\\w+\\s*oblast",
+      "regex": "(?<=\\w)\\s+\\w+-\\w+\\.?\\s*(oblast|kraj|kray|krai|rajon|rayon|raion|r-n)",
+      "rulesets": "all",
+      "variants": [
+        ""
+      ],
+      "web": true
+    },
+    {
+      "regex": "(?<=\\w)(-|\\s)\\s*\\w+\\.?\\s*(oblast|kraj|kray|krai|rajon|rayon|raion|r-n)",
       "rulesets": "all",
       "variants": [
         ""
@@ -3097,8 +3105,8 @@
       "regex": "sk(a|á|aja|aya) oblast",
       "rulesets": "all",
       "variants": [
-        "",
-        "sk"
+        "sk",
+        ""
       ],
       "web": true
     },
@@ -3111,7 +3119,24 @@
       "web": true
     },
     {
-      "regex": "\\b.{1,3}\\.",
+      "regex": "^(\\w{7,})\\s+\\1$",
+      "rulesets": "all",
+      "variants": [
+        "\\1"
+      ],
+      "web": true
+    },
+    {
+      "regex": "^(\\w+)-(\\w+)$",
+      "rulesets": "all",
+      "variants": [
+        "\\1-\\2",
+        "\\1"
+      ],
+      "web": true
+    },
+    {
+      "regex": "\\s*\\d+",
       "rulesets": "all",
       "variants": [
         ""
@@ -3119,7 +3144,15 @@
       "web": true
     },
     {
-      "regex": "cy",
+      "regex": "\\b.{1,3}\\.",
+      "rulesets": [],
+      "variants": [
+        ""
+      ],
+      "web": true
+    },
+    {
+      "string": "cy",
       "rulesets": [
         "romanian"
       ],
@@ -3129,7 +3162,7 @@
       "web": true
     },
     {
-      "regex": "š",
+      "string": "š",
       "rulesets": [
         "romanian"
       ],
@@ -3139,7 +3172,7 @@
       "web": true
     },
     {
-      "regex": "č",
+      "string": "č",
       "rulesets": [
         "romanian"
       ],
@@ -3149,7 +3182,7 @@
       "web": true
     },
     {
-      "regex": "ě",
+      "string": "ě",
       "rulesets": [
         "romanian"
       ],
@@ -3159,7 +3192,7 @@
       "web": true
     },
     {
-      "regex": "ý",
+      "string": "ý",
       "rulesets": [
         "romanian"
       ],
@@ -3169,7 +3202,7 @@
       "web": true
     },
     {
-      "regex": "í",
+      "string": "í",
       "rulesets": [
         "romanian"
       ],
@@ -3179,7 +3212,7 @@
       "web": true
     },
     {
-      "regex": "y",
+      "string": "y",
       "rulesets": [
         "romanian"
       ],
@@ -3189,7 +3222,7 @@
       "web": false
     },
     {
-      "regex": "é",
+      "string": "é",
       "rulesets": [
         "romanian"
       ],
@@ -3240,20 +3273,32 @@
       "web": false
     },
     {
-      "regex": "v\\.",
+      "regex": "v\\.\\s*",
       "rulesets": [
         "ukrainian"
       ],
       "variants": [
-        "velykyj",
-        "velyka",
-        "vyshni",
-        "vyshna"
+        "velykyj ",
+        "velyka ",
+        "vyshni ",
+        "vyshna ",
+        "verkhnye "
       ],
       "web": false
     },
     {
-      "regex": "vel\\.",
+      "string": "ja",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "ja",
+        "ya"
+      ],
+      "web": false
+    },
+    {
+      "string": "vel.",
       "rulesets": [
         "ukrainian"
       ],
@@ -3264,12 +3309,24 @@
       "web": true
     },
     {
-      "regex": "velkyj",
+      "string": "velkyj",
       "rulesets": [
         "ukrainian"
       ],
       "variants": [
         "velykyj"
+      ],
+      "web": true
+    },
+    {
+      "regex": "chorn",
+      "rulesets": [
+        "ukrainian",
+        "russian"
+      ],
+      "variants": [
+        "chorn",
+        "chern"
       ],
       "web": true
     },
@@ -3284,9 +3341,9 @@
       "web": true
     },
     {
-      "regex": "r-n",
+      "string": "r-n",
       "rulesets": [
-        "ukrainian"
+        "ukrainian", "russian"
       ],
       "variants": [
         "rayon"
@@ -3304,7 +3361,7 @@
       "web": true
     },
     {
-      "regex": "ý",
+      "string": "ý",
       "rulesets": [
         "polish",
         "russian",
@@ -3316,7 +3373,7 @@
       "web": true
     },
     {
-      "regex": "ď",
+      "string": "ď",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3327,7 +3384,7 @@
       "web": true
     },
     {
-      "regex": "ť",
+      "string": "ť",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3349,7 +3406,7 @@
       "web": true
     },
     {
-      "regex": "ň",
+      "string": "ň",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3360,19 +3417,30 @@
       "web": true
     },
     {
-      "regex": "ě",
+      "string": "ě",
       "rulesets": [
-        "polish",
-        "ukrainian",
-        "russian"
+        "polish"
       ],
       "variants": [
-        "ie"
+        "ie",
+        "e"
       ],
       "web": true
     },
     {
-      "regex": "ž",
+      "string": "ě",
+      "rulesets": [
+        "ukrainian",
+        "russian"
+      ],
+      "variants": [
+        "ye",
+        "e"
+      ],
+      "web": true
+    },
+    {
+      "string": "ž",
       "rulesets": [
         "polish",
         "russian",
@@ -3384,7 +3452,54 @@
       "web": true
     },
     {
-      "regex": "šč",
+      "regex": "c(?!h)",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "ts"
+      ],
+      "web": true
+    },
+    {
+      "string": "sts",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "sts",
+        "sc"
+      ],
+      "web": true
+    },
+    {
+      "regex": "(?<!s)(?:kh|ch)",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "kh",
+        "ch"
+      ],
+      "web": false
+    },
+    {
+      "string": "čč",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "čč",
+        "šč"
+      ],
+      "web": true
+    },
+    {
+      "string": "šč",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3401,36 +3516,14 @@
         "ukrainian"
       ],
       "variants": [
-        "sc",
         "sch",
-        "shch"
+        "shch",
+        "sc"
       ],
       "web": false
     },
     {
-      "regex": "ch",
-      "rulesets": [
-        "russian",
-        "ukrainian"
-      ],
-      "variants": [
-        "kh"
-      ],
-      "web": true
-    },
-    {
-      "regex": "c",
-      "rulesets": [
-        "russian",
-        "ukrainian"
-      ],
-      "variants": [
-        "ts"
-      ],
-      "web": true
-    },
-    {
-      "regex": "ť",
+      "string": "ť",
       "rulesets": [
         "polish"
       ],
@@ -3440,7 +3533,7 @@
       "web": true
     },
     {
-      "regex": "č",
+      "string": "č",
       "rulesets": [
         "polish"
       ],
@@ -3450,7 +3543,7 @@
       "web": true
     },
     {
-      "regex": "č",
+      "string": "č",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3461,7 +3554,7 @@
       "web": true
     },
     {
-      "regex": "š",
+      "string": "š",
       "rulesets": [
         "polish"
       ],
@@ -3471,7 +3564,7 @@
       "web": true
     },
     {
-      "regex": "š",
+      "string": "š",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3482,7 +3575,7 @@
       "web": true
     },
     {
-      "regex": "ij",
+      "string": "ij",
       "rulesets": [
         "russian"
       ],
@@ -3492,7 +3585,7 @@
       "web": true
     },
     {
-      "regex": "yj",
+      "string": "yj",
       "rulesets": [
         "russian"
       ],
@@ -3502,7 +3595,7 @@
       "web": true
     },
     {
-      "regex": "j",
+      "string": "j",
       "rulesets": [
         "russian"
       ],
@@ -3512,7 +3605,7 @@
       "web": true
     },
     {
-      "regex": "oj",
+      "string": "oj",
       "rulesets": [
         "russian"
       ],
@@ -3522,7 +3615,7 @@
       "web": true
     },
     {
-      "regex": "g",
+      "string": "g",
       "rulesets": [
         "ukrainian"
       ],
@@ -3532,7 +3625,7 @@
       "web": true
     },
     {
-      "regex": "ov",
+      "string": "ov",
       "rulesets": [
         "ukrainian"
       ],
@@ -3543,7 +3636,30 @@
       "web": false
     },
     {
-      "regex": "evk",
+      "string": "ev",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "ev",
+        "iv"
+      ],
+      "web": false
+    },
+    {
+      "string": "iv",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "iv",
+        "ov",
+        "ev"
+      ],
+      "web": false
+    },
+    {
+      "string": "evk",
       "rulesets": [
         "ukrainian"
       ],
@@ -3554,7 +3670,7 @@
       "web": false
     },
     {
-      "regex": "ozh",
+      "string": "ozh",
       "rulesets": [
         "ukrainian"
       ],
@@ -3565,7 +3681,7 @@
       "web": false
     },
     {
-      "regex": "yje",
+      "string": "yje",
       "rulesets": [
         "ukrainian"
       ],
@@ -3575,17 +3691,18 @@
       "web": true
     },
     {
-      "regex": "il",
+      "string": "il",
       "rulesets": [
         "ukrainian"
       ],
       "variants": [
+        "il",
         "il'"
       ],
       "web": true
     },
     {
-      "regex": "j",
+      "string": "j",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3596,7 +3713,7 @@
       "web": true
     },
     {
-      "regex": "x",
+      "string": "x",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3607,7 +3724,7 @@
       "web": true
     },
     {
-      "regex": "ská",
+      "string": "ská",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3629,7 +3746,7 @@
       "web": true
     },
     {
-      "regex": "ský",
+      "string": "ský",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3650,7 +3767,45 @@
       "web": true
     },
     {
-      "regex": "i|y",
+      "regex": "i?e",
+      "rulesets": [
+        "ukrainian"
+      ],
+      "variants": [
+        "e",
+        "ie"
+      ],
+      "web": false
+    },
+    {
+      "regex": "skiy\\b",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "skiy",
+        "sk",
+        ""
+      ],
+      "web": false
+    },
+    {
+      "regex": "skay?a?\\b",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "ska",
+        "skaya",
+        "sk",
+        ""
+      ],
+      "web": false
+    },
+    {
+      "string": "i",
       "rulesets": [
         "russian",
         "ukrainian"
@@ -3658,6 +3813,18 @@
       "variants": [
         "i",
         "y"
+      ],
+      "web": false
+    },
+    {
+      "string": "y",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "y",
+        "i"
       ],
       "web": false
     },
@@ -3695,17 +3862,6 @@
       "web": false
     },
     {
-      "regex": "i?e",
-      "rulesets": [
-        "ukrainian"
-      ],
-      "variants": [
-        "ie",
-        "e"
-      ],
-      "web": false
-    },
-    {
       "regex": "(?<![cskz])(?:h|g)",
       "rulesets": [
         "ukrainian"
@@ -3717,51 +3873,13 @@
       "web": false
     },
     {
-      "regex": "kh|ch",
-      "rulesets": [
-        "russian",
-        "ukrainian"
-      ],
-      "variants": [
-        "kh",
-        "ch"
-      ],
-      "web": false
-    },
-    {
-      "regex": "skiy",
-      "rulesets": [
-        "russian",
-        "ukrainian"
-      ],
-      "variants": [
-        "skiy",
-        "sk",
-        ""
-      ],
-      "web": false
-    },
-    {
-      "regex": "skay?a?",
-      "rulesets": [
-        "russian",
-        "ukrainian"
-      ],
-      "variants": [
-        "skaya",
-        "sk",
-        ""
-      ],
-      "web": false
-    },
-    {
       "regex": "v|w",
       "rulesets": [
         "polish"
       ],
       "variants": [
-        "v",
-        "w"
+        "w",
+        "v"
       ],
       "web": false
     },
@@ -3771,14 +3889,14 @@
         "polish"
       ],
       "variants": [
+        "z",
         "ž",
-        "ź",
-        "z"
+        "ź"
       ],
       "web": false
     },
     {
-      "regex": "ce",
+      "string": "ce",
       "rulesets": [
         "polish"
       ],
@@ -3789,18 +3907,31 @@
       "web": false
     },
     {
-      "regex": "(?<=[dtn])(\\b|-)",
+      "regex": "(?<=[dtnls])(\\b|-)",
       "rulesets": [
-        "russian", "ukrainian"
+        "russian",
+        "ukrainian"
       ],
       "variants": [
-        "'",
-        ""
+        "",
+        "'"
       ],
       "web": false
     },
     {
-      "regex": "sz",
+      "regex": "(?<!i|y)y\\b",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "y",
+        "yy"
+      ],
+      "web": false
+    },
+    {
+      "string": "sz",
       "rulesets": [
         "polish"
       ],
@@ -3809,13 +3940,94 @@
         "ś"
       ],
       "web": false
+    },
+    {
+        "string": "i",
+        "rulesets": ["hungarian"],
+        "variants": [
+            "i",
+            "yí"
+        ],
+        "web": true
+    },
+    {
+        "string": "ö",
+        "rulesets": ["hungarian"],
+        "variants": [
+            "ö",
+            "ő"
+        ],
+        "web": true
+    },
+    {
+        "string": "č",
+        "rulesets": ["hungarian"],
+        "variants": [
+            "cs"
+        ],
+        "web": true
+    },
+    {
+        "regex": "s",
+        "rulesets": ["hungarian"],
+        "variants": [
+            "s",
+            "sz"
+        ],
+        "web": true
+    },
+    {
+        "regex": "ž",
+        "rulesets": ["hungarian"],
+        "variants": [
+            "zs"
+        ],
+        "web": true
+    },
+    {
+        "regex": "š",
+        "rulesets": ["hungarian"],
+        "variants": [
+            "s"
+        ],
+        "web": true
+    },
+    {
+        "regex": "ď",
+        "rulesets": ["hungarian"],
+        "variants": [
+            "gy"
+        ],
+        "web": true
+    },
+    {
+        "regex": "ť",
+        "rulesets": ["hungarian"],
+        "variants": [
+            "ty"
+        ],
+        "web": true
+    },
+    {
+        "regex": "j",
+        "rulesets": ["hungarian"],
+        "variants": [
+            "j",
+            "ly"
+        ],
+        "web": true
     }
   ],
   "geocoders" : [
     {
       "name" : "geonames",
-      "web" : false
+      "settings" : {
+        "dbname" : "geocode",
+        "user" : "postgres",
+        "password" : "bezhesla",
+        "host" : "localhost",
+        "port" : 5432
+      }
     }
-  ],
-  "continueProbability" : 0.99
+  ]
 }
