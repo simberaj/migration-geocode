@@ -4,6 +4,7 @@ new_data/
 old_confs/
 wave/
 src/
+result/
 *.zip
 *.db
 dbconf.json

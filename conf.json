@@ -3805,18 +3805,6 @@
       "web": false
     },
     {
-      "string": "i",
-      "rulesets": [
-        "russian",
-        "ukrainian"
-      ],
-      "variants": [
-        "i",
-        "y"
-      ],
-      "web": false
-    },
-    {
       "string": "y",
       "rulesets": [
         "russian",
@@ -3836,6 +3824,18 @@
       "variants": [
         "ini",
         "inni"
+      ],
+      "web": false
+    },
+    {
+      "string": "i",
+      "rulesets": [
+        "russian",
+        "ukrainian"
+      ],
+      "variants": [
+        "i",
+        "y"
       ],
       "web": false
     },
@@ -4022,7 +4022,7 @@
     {
       "name" : "geonames",
       "settings" : {
-        "dbname" : "geocode",
+        "dbname" : "geocode_smaller",
         "user" : "postgres",
         "password" : "bezhesla",
         "host" : "localhost",

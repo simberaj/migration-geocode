@@ -62,16 +62,16 @@ class Reader(CSVIO):
             ), line
 
     def _default_csv_config(self):
-        dialect = csv.Sniffer().sniff(self.file.read(1024))
+        dialect = csv.Sniffer().sniff(self.file.read(2048))
         self.file.seek(0)
         return {'dialect' : dialect}
         
         
 class HistoryReader(Reader):
-    def read(self):
+    def read(self, do_bads=False):
         history = {}
         for placename, line in self:
-            if placename not in history and line['address']:
+            if placename not in history and (do_bads or line['address']):
                 history[placename] = self._line_to_location(line)
         return history
         
@@ -154,8 +154,8 @@ class GeocodingEngine:
             i += 1
             print(i, ' '*10, end='\r')
     
-    def load_history(self, history_file, **csvconf):
-        self.history.update(HistoryReader(history_file, **csvconf).read())
+    def load_history(self, history_file, do_bads=False, **csvconf):
+        self.history.update(HistoryReader(history_file, **csvconf).read(do_bads=do_bads))
     
     @staticmethod
     def _create_farm(conf_file, **kwargs):
@@ -227,19 +227,23 @@ class GeonamesGeocoder:
     is_web = False
     names = ['geonames']
     minmatch = .6
-    FUZZY_QRY = """SELECT
-        (
-            similarity(name, %(name)s)
-            + geonames_importance_log(l.loccat, l.population)
-        ) AS crit,
+    FUZZY_QRY = """WITH matches AS (SELECT
+            id,
+            name,
+            name <-> %(name)s AS dist,
+            similarity(name, %(name)s) AS simil
+        FROM geonames
+        ORDER BY dist LIMIT 10
+    )
+    SELECT
+        m.simil + geonames_importance_log(l.loccat, l.population) AS crit,
         l.country AS country_match,
-        n.name AS name_match,
-        l.id, l.wgslat, l.wgslon, l.loctype AS type, l.population
-    FROM geonames n, geolocations l
-    WHERE
-        n.name %% %(name)s
-        AND n.id=l.id
-        AND l.country=%(country)s
+        m.name AS name_match,
+        l.id, l.wgslat, l.wgslon,
+        l.loctype AS type,
+        l.population
+    FROM matches m JOIN geolocations l ON m.id=l.id
+    WHERE l.country=%(country)s
     ORDER BY crit DESC LIMIT 1;
     """    
     EXACT_QRY = """SELECT
@@ -285,7 +289,6 @@ class GeonamesGeocoder:
         return self._unfold(maxres) if (maxres and maxcrit >= self.minmatch) else None
   
     def _query(self, name, country):
-        # print(name, country)
         self.cursor.execute(self.qry, {'name' : name, 'country' : country})
         return self.cursor.fetchone()
     
@@ -539,6 +542,7 @@ if __name__ == '__main__':
     parser.add_argument('-l', '--headerless', action='store_false', help='the file does not have field names, use indexes to determine column positions', dest='header')
     parser.add_argument('-T', '--no-transcription', action='store_true', help='do not use transcription rules')
     parser.add_argument('-F', '--no-fuzzy', action='store_true', help='do not use fuzzy string search')
+    parser.add_argument('-B', '--history-bads', action='store_true', help='do not retry failed items from history')
     args = parser.parse_args()
     engine = GeocodingEngine(
         args.config,
@@ -550,7 +554,8 @@ if __name__ == '__main__':
             args.history,
             name_field=args.namecol,
             country_field=args.countrycol,
-            encoding=args.encoding
+            encoding=args.encoding,
+            do_bads=args.history_bads,
         )
     engine.run(
         args.input,
