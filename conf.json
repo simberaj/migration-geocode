@@ -3274,7 +3274,7 @@
       "web": false
     },
     {
-      "regex": "v\\.\\s*",
+      "regex": "\\bv\\.\\s*",
       "rulesets": [
         "ukrainian"
       ],
@@ -3648,7 +3648,7 @@
       "web": false
     },
     {
-      "string": "iv",
+      "regex": "(?<!\\b)iv",
       "rulesets": [
         "ukrainian"
       ],
