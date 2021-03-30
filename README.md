@@ -1,60 +1,66 @@
-Geokódovací nástroj pro nespolehlivá data. Vyvinuto pro potřeby geokódování migrační databáze s velkým množstvím překlepů, chyb, nesourodých formátů a nekonzistentních transkripcí.
+# Migration Geocode: a geocoding tool for messy data
 
-Nástroj běží na Pythonu 3, bez nutnosti instalovat další balíčky.
+This geocoding tool was developed to facilitate geocoding of large datasets containing freeform placenames with lots of typographical errors, mistakes, incoherent formats and inconsistent transcriptions.
 
-# Jak to zprovoznit
+It runs on Python 3 in conjunction with a PostgreSQL database with a pg_trgm extension to enable fuzzy matching.
 
-* Stáhnout obsah repozitáře do složky.
-* Nainstalovat Python 3 (potvrdit, že instalace má být umístěna v proměnné PATH).
-* Spustit generování geokódovací databáze příkazem (v příkazové řádce)
+## How to make it run
+
+* Download it to a machine with Python 3 that has geopy and psycopg2 packages installed.
+* Modify the conf.json file to contain connection details to your PostgreSQL database.
+* Fill the database with data from GeoNames by running
 
         python load_geonames.py
 
-  Z webu se přitom stáhne cca 400 MB dat, je třeba cca 2 GB volného místa.
+  on the command line. This will download appx. 400 MB data and require appx. 2 GB of free space on your hard drive. It will create two tables in the target database: `geonames`, containing mappings of location names to location IDs, and `geolocations`, containing further information per location ID.
   
-* Zobrazit si nápovědu ke spouštění příkazem
+* The geocoder is then run by invoking
 
-        python geocode.py --help
+        python geocode.py
+  
+  (use `--help` to show help on command line options)
 
-# Běh nástroje
-Nástroj přijímá na vstupu bezhlavičkový CSV soubor, kde:
+## Input and output
+The geocoder accepts an input headerless CSV file (semicolon delimited) with two columns:
 
-* jeden sloupec obsahuje název nebo ISO kód státu, v němž se místo nachází,
-* další sloupec obsahuje název místa, které má být geokódováno.
+* the first one containing a name (referenced in the `conf.json` file) or an ISO code of a country,
+* the second one containing a placename in that country to be geocoded.
 
-Pořadí těchto sloupců lze určit volbami na příkazové řádce, např.
+The order of these columns can be modified using command line parameters such as
 
     python geocode.py -s 4 -n 2
     
-určí, že název místa se nachází v druhém a název státu ve čtvrtém sloupci.
+which will instruct the tool to look for the placename in the second and the country name in the fourth column of the CSV file.
 
-Pomocí dotazů do geokódovací databáze za pomoci transkriptoru (viz níže) se nástroj snaží geokódovat předaná místa. Nástroj vytváří na výstupu CSV soubor, v němž jsou přidány vpravo následující sloupce:
+The tool works by applying transcription rules defined in `conf.json` to the input placename and matching the transcribed strings against the PostgreSQL database filled by the GeoNames gazetteer.
 
-* Název a stát nalezeného místa.
-* Zeměpisnou šířku a zeměpisnou délku.
-* Chybu určení místa.
-* Zdroj geokódování.
-* Počet míst nalezených pro daný název.
-* ID daného místa v geokódovacím zdroji.
-* Typ místa z geokódovacího zdroje.
-* Důležitost místa (u obydlených míst počet obyvatel).
+The output will be a CSV file with the following columns added:
 
-## Transkriptor
-V souboru `geocode.py` je obsažen transkriptor, který se snaží odstranit chyby ve vstupních datech. Ten ke každému dotazu vytvoří několik upravených variant, které potom vstupují jako dotazy do geokódovací databáze.
+* Placename and country that was matched.
+* Latitude and longitude.
+* Approximate coordinate uncertainty (error).
+* Source of the geocoding (will be `geonames`).
+* Number of places matched for the given placename transcription.
+* ID of the matched place in the GeoNames gazetteer.
+* GeoNames place type of the matched place.
+* Importance of the matched place (equals to the number of inhabitants for populated places).
 
-Varianty se vytvářejí následujícím postupem:
+## Transcription
+A key part of the geocoder is the transcriptor which tries to mitigate noise from the input data. It creates several variants of the input placename that can be input as query strings against the GeoNames gazetteer.
 
-* Na základě udané země (státu) se dle konfigurace z `conf.json` vybere transkripční ruleset - tedy všechna pravidla, která se použijí pro transkripci (pro Ukrajinu je jiný než pro Vietnam).
-* Pro každé pravidlo se vygenerují všechny varianty jeho aplikace a ty se vrátí. Pravidlo je definováno vstupem (regex), což je regulární výraz určující, na jakou část textu má být použito, a variantami, tedy všemi možnostmi, kterými se nahradí každý výskyt regexu v dotazu.
+The transcription goes as follows:
 
-Příklad:
+* A transcription ruleset from `conf.json` is selected based on the country of the placename - different transcription rules will be applied for Ukrainian placenames and Vietnamese placenames, for example.
+* Each transcription rule from the ruleset, in the order defined by the configuration, is checked against the placename. If the regular expression matches, each occurrence of it is replaced by its defined transcription. If there are multiple transcription variants defined for the rule, all possible combinations of the transcription are generated.
 
-* Vstup: hoktemberyan
-* Pravidla:
-  * `\bho -> o` (`\b` značí začátek či konec slova)
+An example:
+
+* Input placename: hoktemberyan
+* Ruleset:
+  * `\bho -> o` (`\b` marks beginning or end of word)
   * `e -> e, i`
   * `ya -> a, i`
-* Varianty na výstupu:
+* Output transcription variants:
   * oktemberin
   * oktembirin
   * oktemberan
@@ -64,22 +70,12 @@ Příklad:
   * oktimberan
   * oktimbiran
 
-Pokud chcete za běhu vidět, jaké dotazy jsou po transkripci posílány do databáze, stačí odkomentovat funkce `print` v metodě `Geocoder.query` (kolem řádku 170).
+If you want to see the actual queries being done to the database, uncomment the `print` function call in `Geocoder.query` (around line 170).
 
-## Zpětné mapování
-Pro vylepšení běhu nástroje je na konci geokódování na neúspěšné dotazy aplikováno zpětné mapování. Při něm je pro každý neúspěšný dotaz prohledán seznam všech úspěšných dotazů začínajících stejným písmenem. Pokud má některý z nich Levenshteinovu vzdálenost rovnou 1, je považován za identický a doposud neúspěšný dotaz je goekódován tímto výsledkem.
+## Fuzzy matching
+To further improve the result, instead of matching the gazetteer records exactly, fuzzy trigram matching is applied with the pg_trgm extension to produce strings equal or similar (as measured by the fraction of shared three-character substrings) to the queried transcribed variant. The most similar result is selected, with the place importance indicator from GeoNames is used to break ties.
 
-## Geokódovací databáze
-Před spuštěním programu je nejprve nutné vytvořit geokódovací databázi (soubor `geo.db`). Ta se sama stáhne z webu Geonames.org - jde o globální databázi jmen a souřadnic.
+## Utilities
 
-### Testování
-Pro testování toho, co databáze obsahuje, můžete využít utilitku sqltest.py. Stačí ji v Pythonu spustit a zadávat SQL příkazy. Databáze obsahuje dvě (obrovské) tabulky, v jedné jsou jména a ID lokací (protože jedna lokace může mít více jmen), v druhé ID lokací a další informace včetně souřadnic. Takže pro testování úspěšnosti dotazu lze použít např.
-
-    select * from geonames left join geolocations on geonames.id=geolocations.id where name='praha';
-
-Pozor, všechny názvy jsou uloženy malými písmeny (lowercase)!
-
-## Nástroje
-
-### Deduplikace
-Přiložena je utilitka `dedup.py`, která z daného souboru vytvoří nový soubor, kde jsou již pouze unikátní řádky. Hodí se pro preprocessing excelovských souborů, aby se opakované záznamy nemusely geokódovat dvakrát. Nakonec je samozřejmě třeba geokódované výsledky zpět najoinovat - např. pomocí funkce VLOOKUP v Excelu, kde se dá otevřít výstupní CSV soubor.
+### Deduplication
+The `dedup.py` auxiliary utility can be used to produce a dataset with duplicate rows dropped, in order to avoid repeated geocoding of the same string. If used, the geocoding result must then be reverse-mapped to the original dataset, e.g. by Excel's VLOOKUP.

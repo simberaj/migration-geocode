@@ -35,7 +35,7 @@
         "Kyrgyzstan"
       ]
     },
-    "IC": {
+    "IS": {
       "centroid": [
         65.0,
         -18.0
@@ -43,7 +43,7 @@
       "names:cs": [
         "Island"
       ],
-      "code": "IC",
+      "code": "IS",
       "neighbours": [
         "DK",
         "NO",
@@ -1857,7 +1857,8 @@
       ],
       "names:cs": [
         "Česko",
-        "Česká Republika"
+        "Česká Republika",
+        "Česká republika"
       ],
       "code": "CZ",
       "neighbours": [
